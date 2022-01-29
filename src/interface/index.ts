@@ -71,3 +71,6 @@ export type ColorsVariants =
   | '#F44336'
   | 'rgba(0, 0, 0, 0.6)'
   | '#fff';
+
+export type ButtonVariants = 'outlined' | 'contained';
+export type ButtonSize = 'large' | 'small';
