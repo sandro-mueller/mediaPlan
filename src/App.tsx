@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Toast } from './components/Toast';
+import { Container } from './components/Container';
+import { AppBar } from '@components/AppBar';
+import { useTheme } from '@emotion/react';
+import { Colors } from './interface';
 
-function App() {
+export const App = () => {
+  const { colors }: Colors = useTheme();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AppBar backgroundColor={colors.primary} />
+      <Toast />
+      <Container />
+    </>
   );
-}
+};
 
 export default App;
