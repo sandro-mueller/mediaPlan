@@ -3,6 +3,7 @@ import { Container } from './components/Container';
 import { AppBar } from '@components/AppBar';
 import { useTheme } from '@emotion/react';
 import { Colors } from './interface';
+import { Wrapper } from '@components/Wrapper';
 
 export const App = () => {
   const { colors }: Colors = useTheme();
@@ -11,7 +12,9 @@ export const App = () => {
     <>
       <AppBar backgroundColor={colors.primary} />
       <Toast />
-      <Container />
+      <Wrapper>
+        <Container />
+      </Wrapper>
     </>
   );
 };

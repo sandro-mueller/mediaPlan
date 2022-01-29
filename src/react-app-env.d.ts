@@ -16,6 +16,7 @@ declare module '@emotion/react' {
       success: string;
       error: string;
       text: string;
+      white: string;
     };
 
     baseline: {
@@ -29,13 +30,16 @@ declare module '@emotion/react' {
       b8: number;
     };
 
-    breakPoints: {
-      xs: number;
-      sm: number;
-      md: number;
-      lg: number;
-      xl: number;
+    fontWeight: {
+      thin: number;
+      light: number;
+      regular: number;
+      medium: number;
+      bold: number;
+      black: number;
     };
+
+    breakPoints: Array<number>;
 
     ThemeProvider: ThemeProvider;
   }

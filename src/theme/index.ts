@@ -5,6 +5,7 @@ export const theme = {
     success: '#7bc67e',
     error: '#F44336',
     text: 'rgba(0, 0, 0, 0.6)',
+    white: '#fff',
   },
 
   baseline: {
@@ -18,11 +19,14 @@ export const theme = {
     b8: 64,
   },
 
-  breakPoints: {
-    xs: 0,
-    sm: 600,
-    md: 900,
-    lg: 1200,
-    xl: 1536,
+  fontWeight: {
+    thin: 100,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    black: 900,
   },
+
+  breakPoints: [0, 600, 900, 1200, 1536],
 };
