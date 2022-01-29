@@ -39,6 +39,23 @@ declare module '@emotion/react' {
       black: number;
     };
 
+    easing: {
+      easeInOut: string;
+      easeOut: string;
+      easeIn: string;
+      sharp: string;
+    };
+
+    duration: {
+      shortest: number;
+      shorter: number;
+      short: number;
+      standard: number;
+      complex: number;
+      enteringScreen: number;
+      leavingScreen: number;
+    };
+
     breakPoints: Array<number>;
 
     ThemeProvider: ThemeProvider;

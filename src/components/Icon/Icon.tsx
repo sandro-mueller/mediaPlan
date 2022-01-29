@@ -1,5 +1,5 @@
 interface Props {
-  type: 'menuIcon';
+  type: 'menuIcon' | 'checkCircle';
 }
 
 export const Icon = ({ type }: Props) => {
@@ -16,6 +16,20 @@ export const Icon = ({ type }: Props) => {
         >
           <path d="M0 0h24v24H0z" fill="none" />
           <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </svg>
+      )}
+
+      {/* CheckCircle */}
+      {type === 'checkCircle' && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#fff"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z" />
         </svg>
       )}
     </>

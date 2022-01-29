@@ -8,10 +8,12 @@ import { Wrapper } from '@components/Wrapper';
 export const App = () => {
   const { colors }: Colors = useTheme();
 
+  const title = 'Plan saved';
+
   return (
     <>
       <AppBar backgroundColor={colors.primary} />
-      <Toast />
+      <Toast title={title} showTitle={!!title} />
       <Wrapper>
         <Container />
       </Wrapper>

@@ -1,5 +1,4 @@
 // INTERFACES
-
 export interface Colors {
   colors: {
     primary: string;
@@ -7,6 +6,7 @@ export interface Colors {
     success: string;
     error: string;
     text: string;
+    white: string;
   };
 }
 
@@ -32,6 +32,23 @@ export interface FontWeights {
     bold: number;
     black: number;
   };
+}
+
+export interface Easing {
+  easeInOut: string;
+  easeOut: string;
+  easeIn: string;
+  sharp: string;
+}
+
+export interface Duration {
+  shortest: number;
+  shorter: number;
+  short: number;
+  standard: number;
+  complex: number;
+  enteringScreen: number;
+  leavingScreen: number;
 }
 
 export interface BreakPoints {
