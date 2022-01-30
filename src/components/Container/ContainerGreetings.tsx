@@ -1,11 +1,17 @@
 import { Typography } from '@components/Typography';
 import { Box } from '@components/Box';
 import { Button } from '@components/Button';
-import { Baseline } from '@interface/index';
 import { useTheme } from '@emotion/react';
+import { showToast } from '@utils/showToast';
+import { Baseline } from '@interface/index';
+import lodash from 'lodash';
 
 export const ContainerGreetings = () => {
   const { baseline }: Baseline = useTheme();
+
+  const onHandleClick = () => {
+    showToast('Form cleared', 'success');
+  };
 
   return (
     <>
@@ -28,7 +34,7 @@ export const ContainerGreetings = () => {
           variant={'outlined'}
           color={'#28abe2'}
           size={'large'}
-          onHandleClick={() => console.log('clicked')}
+          handleClick={lodash.throttle(onHandleClick, 3000)}
         >
           Clear Form
         </Button>

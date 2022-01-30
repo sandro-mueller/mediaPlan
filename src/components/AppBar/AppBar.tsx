@@ -4,6 +4,8 @@ import { Box } from '@components/Box';
 import { Property } from 'csstype';
 import { Icon } from '@components/Icon';
 import { Button } from '@components/Button';
+import { showToast } from '@utils/showToast';
+import lodash from 'lodash';
 
 type Props = {
   backgroundColor?: Property.BackgroundColor;
@@ -25,6 +27,10 @@ const StyledAppBar = styled.div<Props>(
 );
 
 export const AppBar = ({ backgroundColor }: Props) => {
+  const onHandleClick = () => {
+    showToast('Coming soon');
+  };
+
   return (
     <StyledAppBar backgroundColor={backgroundColor}>
       <Box
@@ -35,7 +41,12 @@ export const AppBar = ({ backgroundColor }: Props) => {
         alignItems={'center'}
       >
         <Icon type={'menuIcon'} />
-        <Button variant={'contained'} color={'#28abe2'} size={'small'}>
+        <Button
+          variant={'contained'}
+          color={'#28abe2'}
+          size={'small'}
+          handleClick={lodash.throttle(onHandleClick, 3000)}
+        >
           Dark Mode
         </Button>
       </Box>

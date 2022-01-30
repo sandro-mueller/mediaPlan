@@ -7,7 +7,7 @@ interface Props {
   variant: ButtonVariants;
   color: ColorsVariants;
   size: ButtonSize;
-  onHandleClick?: () => void;
+  handleClick?: () => void;
 }
 
 const StyledButton = styled.button<Props>(
@@ -36,7 +36,7 @@ export const Button: React.FC<Props> = ({
   variant,
   color,
   size,
-  onHandleClick,
+  handleClick,
   children,
 }) => {
   return (
@@ -44,7 +44,7 @@ export const Button: React.FC<Props> = ({
       variant={variant}
       color={color}
       size={size}
-      onClick={onHandleClick}
+      onClick={handleClick}
     >
       <Typography
         variant={'buttonLarge'}

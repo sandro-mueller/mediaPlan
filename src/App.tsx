@@ -1,4 +1,4 @@
-import { Toast } from './components/Toast';
+import { ToastComponent as Toast } from './components/Toast';
 import { Container } from './components/Container';
 import { AppBar } from '@components/AppBar';
 import { useTheme } from '@emotion/react';
@@ -8,13 +8,11 @@ import { Box } from '@components/Box';
 export const App = () => {
   const { colors, baseline } = useTheme();
 
-  const title = 'Plan saved';
-
   return (
     <>
       <AppBar backgroundColor={colors.primary} />
       <Box mt={`${baseline.b4}px`}>
-        <Toast title={title} showTitle={!!title} />
+        <Toast />
       </Box>
       <Wrapper>
         <Container />

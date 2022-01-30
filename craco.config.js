@@ -9,6 +9,7 @@ module.exports = {
       '@constants': path.resolve(__dirname, 'src/constants'),
       '@theme': path.resolve(__dirname, 'src/theme'),
       '@interface': path.resolve(__dirname, 'src/interface'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
     },
   },
   plugins: [
