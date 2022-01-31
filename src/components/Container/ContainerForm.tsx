@@ -26,7 +26,9 @@ const StyledContainerForm = styled.div(
 export const ContainerForm = (): JSX.Element => {
   const dispatch = useDispatch();
   const { baseline }: Baseline = useTheme();
-  const { page } = useSelector((state: State) => state.mediaPlan);
+  const { page, isTitle, isStartDate, isEndDate } = useSelector(
+    (state: State) => state.mediaPlan
+  );
 
   const onHandlePage = (page: number) => {
     dispatch(mediaPlanActions.handlePage(page));
@@ -51,6 +53,7 @@ export const ContainerForm = (): JSX.Element => {
             color={'#7bc67e'}
             size={'large'}
             fullWidth
+            disabled={!(isTitle && isStartDate && isEndDate)}
             handleClick={() => onHandlePage(1)}
           >
             Step 2 of 2

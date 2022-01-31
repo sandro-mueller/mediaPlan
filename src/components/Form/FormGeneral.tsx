@@ -29,7 +29,7 @@ export const FormGeneral = (): JSX.Element => {
       dispatch(mediaPlanActions.handleIsTitle(!!title));
       dispatch(mediaPlanActions.handleIsStartDate(!!startDate));
       dispatch(mediaPlanActions.handleIsEndDate(!!endDate));
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [title, startDate, endDate, dispatch]);
@@ -41,7 +41,7 @@ export const FormGeneral = (): JSX.Element => {
         const isError = Date.parse(startDate) > Date.parse(endDate);
         dispatch(mediaPlanActions.handleIsDateError(isError));
       }
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [startDate, endDate, dispatch]);

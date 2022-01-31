@@ -7,6 +7,8 @@ import { Button } from '@components/Button';
 import { useTheme } from '@emotion/react';
 import { showToast } from '@utils/showToast';
 import { Baseline } from '@interface/index';
+import { useSelector } from 'react-redux';
+import { State } from '@store/interface';
 
 const breakPoints = [768, 1000, 1200];
 
@@ -39,6 +41,9 @@ const StyledBox = styled.div(
 
 export const ContainerGreetings = (): JSX.Element => {
   const { baseline }: Baseline = useTheme();
+  const { page, isTitle, isStartDate, isEndDate } = useSelector(
+    (state: State) => state.mediaPlan
+  );
 
   const onHandleClick = () => {
     showToast('Form reseted', 'success');
@@ -58,6 +63,7 @@ export const ContainerGreetings = (): JSX.Element => {
             variant={'outlined'}
             color={'#28abe2'}
             size={'large'}
+            disabled={!page && !(isTitle || isStartDate || isEndDate)}
             handleClick={lodash.throttle(onHandleClick, 3000)}
           >
             Reset Form
