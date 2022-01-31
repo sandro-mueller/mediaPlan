@@ -1,5 +1,5 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import lodash from 'lodash';
 import facepaint from 'facepaint';
 import { FormChannel } from '@components/Form/FormChannel';
 import { FormGeneral } from '@components/Form/FormGeneral';
@@ -8,7 +8,9 @@ import { showToast } from '@utils/showToast';
 import { Box } from '@components/Box';
 import { useTheme } from '@emotion/react';
 import { Baseline } from '@interface/index';
-import lodash from 'lodash';
+import { useDispatch, useSelector } from 'react-redux';
+import { State } from '@store/interface';
+import { mediaPlanActions } from '@store/module/mediaPlan';
 
 const breakPoints = [1000, 1200];
 
@@ -18,16 +20,16 @@ const mediaQuery = facepaint(
 
 const StyledContainerForm = styled.div(
   mediaQuery({ width: ['100%', '50%'] }),
-
   () => ({})
 );
 
-export const ContainerForm = () => {
-  const [page, setPage] = React.useState(0);
+export const ContainerForm = (): JSX.Element => {
+  const dispatch = useDispatch();
   const { baseline }: Baseline = useTheme();
+  const { page } = useSelector((state: State) => state.mediaPlan);
 
   const onHandlePage = (page: number) => {
-    setPage(page);
+    dispatch(mediaPlanActions.handlePage(page));
   };
 
   const onHandleCopy = () => {

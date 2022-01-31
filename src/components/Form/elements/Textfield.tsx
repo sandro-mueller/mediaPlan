@@ -1,8 +1,10 @@
+//@ts-nocheck
 import Lottie from 'react-lottie';
 import checkmark from '@assets/images/checkmark.json';
 import styled from '@emotion/styled';
 import { Box } from '@components/Box';
 import { LOTTIE_OPTIONS } from '@constants/lottie';
+import React from 'react';
 
 interface Props {
   isError: boolean;
@@ -86,40 +88,46 @@ const StyledHelperText = styled.span<HelperProps>(
   })
 );
 
-export const Textfield = ({
-  isError = false,
-  type = 'text',
-  value,
-  isValue = false,
-  helperText,
-  placeholder,
-  isCounter = false,
-  width = '100%',
-  handleChange,
-}: TextfieldProps) => {
-  return (
-    <Box position={'relative'} width={width}>
-      <StyledTextfield
-        placeholder={placeholder}
-        maxLength={32}
-        isError={isError}
-        value={value}
-        type={type}
-        onChange={handleChange}
-      />
+export const Textfield = React.forwardRef(
+  (
+    {
+      isError = false,
+      type = 'text',
+      value,
+      isValue = false,
+      helperText,
+      placeholder,
+      isCounter = false,
+      width = '100%',
+      handleChange,
+    }: TextfieldProps,
+    ref
+  ): JSX.Element => {
+    return (
+      <Box position={'relative'} width={width}>
+        <StyledTextfield
+          ref={ref}
+          placeholder={placeholder}
+          maxLength={32}
+          isError={isError}
+          value={value}
+          type={type}
+          onChange={handleChange}
+        />
 
-      {isValue && !isError && (
-        <Box position={'absolute'} top={'13px'} right={'10px'}>
-          <Lottie options={options} width={32} />
-        </Box>
-      )}
+        {isValue && !isError && (
+          <Box position={'absolute'} top={'13px'} right={'10px'}>
+            <Lottie options={options} width={32} />
+          </Box>
+        )}
 
-      <StyledHelperText isError={isError}>
-        <Box display={'flex'} justifyContent={'space-between'}>
-          {helperText}
-          <Box>{isCounter && `(${value.length} / 32)`}</Box>
-        </Box>
-      </StyledHelperText>
-    </Box>
-  );
-};
+        <StyledHelperText isError={isError}>
+          <Box display={'flex'} justifyContent={'space-between'}>
+            {helperText}
+            <Box>{isCounter && `(${value.length} / 32)`}</Box>
+          </Box>
+        </StyledHelperText>
+      </Box>
+    );
+  }
+);

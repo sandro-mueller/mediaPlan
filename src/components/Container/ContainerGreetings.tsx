@@ -37,7 +37,7 @@ const StyledBox = styled.div(
   })
 );
 
-export const ContainerGreetings = () => {
+export const ContainerGreetings = (): JSX.Element => {
   const { baseline }: Baseline = useTheme();
 
   const onHandleClick = () => {

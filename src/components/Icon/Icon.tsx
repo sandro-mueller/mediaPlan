@@ -2,7 +2,7 @@ interface Props {
   type: 'menuIcon' | 'checkCircle' | 'infoIcon' | 'reportIcon' | 'closeIcon';
 }
 
-export const Icon = ({ type }: Props) => {
+export const Icon = ({ type }: Props): JSX.Element => {
   return (
     <>
       {/* MenuIcon */}

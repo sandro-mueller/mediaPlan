@@ -23,7 +23,7 @@ const StyledContainerImage = styled.div(
   })
 );
 
-export const ContainerImage = () => {
+export const ContainerImage = (): JSX.Element => {
   return (
     <StyledContainerImage>
       <Lottie options={options} height={380} width={500} />

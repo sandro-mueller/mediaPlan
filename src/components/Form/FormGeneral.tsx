@@ -6,7 +6,8 @@ import { Baseline } from '@interface/index';
 import { useDispatch, useSelector } from 'react-redux';
 import { mediaPlanActions } from '@store/module/mediaPlan';
 import { State } from '@store/interface';
-export const FormGeneral = () => {
+
+export const FormGeneral = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const {
@@ -98,7 +99,7 @@ export const FormGeneral = () => {
           type={'date'}
           helperText={
             isDateError && type === 'endDate'
-              ? 'Finish date can not start earlier'
+              ? 'Finish date cannot start earlier'
               : 'Enter finish date'
           }
           isError={isDateError && type === 'endDate'}

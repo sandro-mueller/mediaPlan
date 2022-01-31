@@ -3,7 +3,7 @@ import { Icon } from '@components/Icon';
 import { Box } from '@components/Box';
 
 //@ts-ignore - Note: Toast interface not exported
-export const ToastBarComponent = ({ t }) => {
+export const ToastBarComponent = ({ t }): JSX.Element => {
   const onHandleClick = (id: string) => {
     toast.dismiss(id);
   };

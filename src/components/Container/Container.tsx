@@ -3,7 +3,7 @@ import { Box } from '@components/Box';
 import { ContainerForm } from './ContainerForm';
 import { ContainerGreetings } from './ContainerGreetings';
 
-export const Container = () => {
+export const Container = (): JSX.Element => {
   return (
     <>
       <ContainerGreetings />

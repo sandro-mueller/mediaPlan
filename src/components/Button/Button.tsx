@@ -40,7 +40,7 @@ export const Button: React.FC<Props> = ({
   disabled,
   handleClick,
   children,
-}) => {
+}): JSX.Element => {
   return (
     <StyledButton
       variant={variant}

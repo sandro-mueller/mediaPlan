@@ -16,7 +16,7 @@ const StyledTypography = styled.div<Props>({}, (props) => ({
 export const Typography: React.FC<{
   variant: TypographyVariants;
   color?: ColorsVariants;
-}> = ({ variant, color, children }) => {
+}> = ({ variant, color, children }): JSX.Element => {
   return (
     <StyledTypography variant={variant} color={color}>
       {children}

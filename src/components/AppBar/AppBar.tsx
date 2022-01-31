@@ -26,7 +26,7 @@ const StyledAppBar = styled.div<Props>(
   })
 );
 
-export const AppBar = ({ backgroundColor }: Props) => {
+export const AppBar = ({ backgroundColor }: Props): JSX.Element => {
   const onHandleClick = () => {
     showToast('Coming soon');
   };
