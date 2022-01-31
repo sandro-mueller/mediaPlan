@@ -1,0 +1,1 @@
+export { mediaPlan } from './mediaPlan';

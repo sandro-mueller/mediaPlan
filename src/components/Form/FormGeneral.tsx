@@ -1,44 +1,49 @@
+import { useEffect } from 'react';
 import { Box } from '@components/Box';
 import { Textfield } from '@components/Form/elements/Textfield';
 import { useTheme } from '@emotion/react';
 import { Baseline } from '@interface/index';
-import React, { useEffect } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { mediaPlanActions } from '@store/module/mediaPlan';
+import { State } from '@store/interface';
 export const FormGeneral = () => {
-  const [title, setTitle] = React.useState('');
-  const [isTitle, setIsTitle] = React.useState(false);
-  const [type, setType] = React.useState('');
+  const dispatch = useDispatch();
 
-  const [startDate, setStartDate] = React.useState('');
-  const [isStartDate, setIsStartDate] = React.useState(false);
-
-  const [endDate, setEndDate] = React.useState('');
-  const [isEndDate, setIsEndDate] = React.useState(false);
-  const [dateError, setDateError] = React.useState(false);
+  const {
+    title,
+    type,
+    startDate,
+    endDate,
+    isTitle,
+    isStartDate,
+    isEndDate,
+    isDateError,
+  } = useSelector((state: State) => state.mediaPlan);
 
   const { baseline }: Baseline = useTheme();
 
   // DEBOUNCE
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsTitle(!!title);
-      setIsStartDate(!!startDate);
-      setIsEndDate(!!endDate);
+      dispatch(mediaPlanActions.handleIsTitle(!!title));
+      dispatch(mediaPlanActions.handleIsStartDate(!!startDate));
+      dispatch(mediaPlanActions.handleIsEndDate(!!endDate));
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [title, startDate, endDate]);
+  }, [title, startDate, endDate, dispatch]);
 
   // VALIDATE DATE
   useEffect(() => {
     const timer = setTimeout(() => {
       if (startDate && endDate) {
-        setDateError(Date.parse(startDate) > Date.parse(endDate));
+        const isError = Date.parse(startDate) > Date.parse(endDate);
+        dispatch(mediaPlanActions.handleIsDateError(isError));
       }
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [startDate, endDate]);
+  }, [startDate, endDate, dispatch]);
 
   const onHandleChange = (
     event: any,
@@ -46,17 +51,17 @@ export const FormGeneral = () => {
   ) => {
     const { value } = event.target;
 
-    setType(type);
+    dispatch(mediaPlanActions.handleType(type));
 
     switch (type) {
       case 'title':
-        setTitle(value);
+        dispatch(mediaPlanActions.handleTitle(value));
         break;
       case 'startDate':
-        setStartDate(value);
+        dispatch(mediaPlanActions.handleStartDate(value));
         break;
       case 'endDate':
-        setEndDate(value);
+        dispatch(mediaPlanActions.handleEndDate(value));
         break;
     }
   };
@@ -78,11 +83,11 @@ export const FormGeneral = () => {
           isValue={isStartDate}
           type={'date'}
           helperText={
-            dateError && type === 'startDate'
-              ? 'Start date can not start later'
+            isDateError && type === 'startDate'
+              ? 'Start date cannot start later'
               : 'Enter starting date'
           }
-          isError={dateError && type === 'startDate'}
+          isError={isDateError && type === 'startDate'}
           width={`calc(50% - ${baseline.b2}px)`}
           handleChange={(event) => onHandleChange(event, 'startDate')}
         />
@@ -92,11 +97,11 @@ export const FormGeneral = () => {
           isValue={isEndDate}
           type={'date'}
           helperText={
-            dateError && type === 'endDate'
+            isDateError && type === 'endDate'
               ? 'Finish date can not start earlier'
               : 'Enter finish date'
           }
-          isError={dateError && type === 'endDate'}
+          isError={isDateError && type === 'endDate'}
           width={`calc(50% - ${baseline.b2}px)`}
           handleChange={(event) => onHandleChange(event, 'endDate')}
         />

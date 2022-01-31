@@ -10,6 +10,7 @@ module.exports = {
       '@theme': path.resolve(__dirname, 'src/theme'),
       '@interface': path.resolve(__dirname, 'src/interface'),
       '@utils': path.resolve(__dirname, 'src/utils'),
+      '@store': path.resolve(__dirname, 'src/store'),
     },
   },
   plugins: [

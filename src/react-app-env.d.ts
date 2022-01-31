@@ -8,6 +8,7 @@ declare module '@constants';
 declare module '@theme';
 declare module '@interface';
 declare module '@utils';
+declare module '@store';
 
 declare module '@emotion/react' {
   export interface Theme {

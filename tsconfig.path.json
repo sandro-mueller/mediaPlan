@@ -8,7 +8,8 @@
       "@constants/*": ["src/constants/*"],
       "@theme/*": ["src/theme/*"],
       "@interface/*": ["src/interface/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@store/*": ["src/store/*"]
     }
   },
   "include": ["./src/react-app-env.d.ts"]
