@@ -44,6 +44,10 @@ const mediaPlanSlice = createSlice({
     handleCurrentOption: (state, { payload }: PayloadAction<string>) => {
       state.currentOption = payload;
     },
+
+    handleMode: (state, { payload }: PayloadAction<string>) => {
+      state.mode = payload;
+    },
   },
 });
 

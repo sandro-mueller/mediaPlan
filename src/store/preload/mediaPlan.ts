@@ -10,4 +10,6 @@ export const mediaPlan = {
   isDateError: false,
 
   currentOption: 'SEA',
+
+  mode: 'light',
 };

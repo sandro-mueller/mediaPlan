@@ -26,6 +26,8 @@ export interface MediaPlan {
   isDateError: boolean;
 
   currentOption: ChannelOptions;
+
+  mode: 'light' | 'dark';
 }
 
 export interface State {

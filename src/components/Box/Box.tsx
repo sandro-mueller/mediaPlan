@@ -17,6 +17,7 @@ type Props = {
   mr?: Property.MarginRight;
   mb?: Property.MarginBottom;
   ml?: Property.MarginLeft;
+  cursor?: Property.Cursor;
   pointerEvents?: Property.PointerEvents;
   bgcolor?: Property.BackgroundColor;
 };
@@ -37,6 +38,7 @@ export const Box = styled.div<Props>({}, (props) => ({
   marginRight: props.mr,
   marginBottom: props.mb,
   marginLeft: props.ml,
+  cursor: props.cursor,
   pointerEvents: props.pointerEvents,
   backgroundColor: props.bgcolor,
 }));

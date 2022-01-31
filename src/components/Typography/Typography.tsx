@@ -10,11 +10,17 @@ interface Props {
 //@ts-ignore - Note: emotion does not know css property 'textTransform'
 const StyledTypography = styled.div<Props>(
   {
-    whiteSpace: 'break-spaces',
+    whiteSpace: 'pre',
   },
+
+  // CONSIDER DARK MODE
   (props) => ({
     ...typography[props.variant],
-    color: props.color ? props.color : typography[props.variant].color,
+    color: props.color
+      ? props.color
+      : props.variant === 'body1'
+      ? props.theme.colors.text
+      : typography[props.variant].color,
   })
 );
 

@@ -26,18 +26,21 @@ export const FormChannelSelection = (): JSX.Element => {
         options={CHANNEL_OPTIONS}
         handleChange={onHandleChange}
       />
+
       <Box
         display={'flex'}
         alignItems={'center'}
         mt={`${baseline.b4}px`}
         mb={`${baseline.b4}px`}
       >
-        <Box mr={`${baseline.b2}px`}>
+        <Box mr={`${baseline.b2}px`} cursor={'pointer'}>
           <Icon type={'addCircle'} />
         </Box>
+
         <Typography variant={'body1'}>
           Add selected option to budget:
         </Typography>
+
         <Typography variant={'body1'} color={'#7bc67e'}>
           {` ${currentOption}`}
         </Typography>

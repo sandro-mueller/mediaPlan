@@ -60,6 +60,7 @@ const StyledTextfield = styled.input<Props>(
     transitionProperty: 'border-color',
     transitionDuration: `${props.theme.duration.shorter}ms`,
     transitionTimingFunction: `${props.theme.easing.easeOut}`,
+    backgroundColor: props.theme.colors.white,
 
     '&:focus': {
       borderColor: props.isError

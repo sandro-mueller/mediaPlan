@@ -6,6 +6,9 @@ import { Icon } from '@components/Icon';
 import { Button } from '@components/Button';
 import { showToast } from '@utils/showToast';
 import lodash from 'lodash';
+import { useDispatch, useSelector } from 'react-redux';
+import { State } from '@store/interface';
+import { mediaPlanActions } from '@store/module/mediaPlan';
 
 type Props = {
   backgroundColor?: Property.BackgroundColor;
@@ -27,8 +30,20 @@ const StyledAppBar = styled.div<Props>(
 );
 
 export const AppBar = ({ backgroundColor }: Props): JSX.Element => {
+  const { mode } = useSelector((state: State) => state.mediaPlan);
+  const dispatch = useDispatch();
+
   const onHandleClick = () => {
-    showToast('Coming soon');
+    switch (mode) {
+      case 'dark':
+        dispatch(mediaPlanActions.handleMode('light'));
+        break;
+      case 'light':
+        dispatch(mediaPlanActions.handleMode('dark'));
+        break;
+    }
+
+    showToast('Theme changed');
   };
 
   return (
@@ -45,9 +60,10 @@ export const AppBar = ({ backgroundColor }: Props): JSX.Element => {
           variant={'contained'}
           color={'#28abe2'}
           size={'small'}
+          width={'162px'}
           handleClick={lodash.throttle(onHandleClick, 3000)}
         >
-          Dark Mode
+          {mode === 'light' ? 'Dark mode' : 'Light mode'}
         </Button>
       </Box>
     </StyledAppBar>
