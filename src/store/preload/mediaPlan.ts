@@ -1,5 +1,5 @@
 export const mediaPlan = {
-  page: '',
+  page: 0,
   title: '',
   type: '',
   startDate: '',
@@ -8,4 +8,6 @@ export const mediaPlan = {
   isStartDate: false,
   isEndDate: false,
   isDateError: false,
+
+  currentOption: 'SEA',
 };

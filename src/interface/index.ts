@@ -74,3 +74,11 @@ export type ColorsVariants =
 
 export type ButtonVariants = 'outlined' | 'contained';
 export type ButtonSize = 'large' | 'small';
+
+export type ChannelOptions = [
+  'SEA',
+  'Display',
+  'Social',
+  'Affiliate',
+  'Remarketing'
+];

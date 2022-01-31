@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { mediaPlanActions } from '@store/module/mediaPlan';
 import { State } from '@store/interface';
 
-export const FormGeneral = (): JSX.Element => {
+export const FormGeneralBasis = () => {
   const dispatch = useDispatch();
 
   const {
@@ -47,7 +47,7 @@ export const FormGeneral = (): JSX.Element => {
   }, [startDate, endDate, dispatch]);
 
   const onHandleChange = (
-    event: any,
+    event: React.ChangeEvent<HTMLInputElement>,
     type: 'title' | 'startDate' | 'endDate'
   ) => {
     const { value } = event.target;

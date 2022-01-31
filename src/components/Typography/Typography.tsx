@@ -8,10 +8,15 @@ interface Props {
 }
 
 //@ts-ignore - Note: emotion does not know css property 'textTransform'
-const StyledTypography = styled.div<Props>({}, (props) => ({
-  ...typography[props.variant],
-  color: props.color ? props.color : typography[props.variant].color,
-}));
+const StyledTypography = styled.div<Props>(
+  {
+    whiteSpace: 'break-spaces',
+  },
+  (props) => ({
+    ...typography[props.variant],
+    color: props.color ? props.color : typography[props.variant].color,
+  })
+);
 
 export const Typography: React.FC<{
   variant: TypographyVariants;

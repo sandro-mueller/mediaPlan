@@ -1,5 +1,13 @@
 interface Props {
-  type: 'menuIcon' | 'checkCircle' | 'infoIcon' | 'reportIcon' | 'closeIcon';
+  type:
+    | 'menuIcon'
+    | 'checkCircle'
+    | 'infoIcon'
+    | 'reportIcon'
+    | 'closeIcon'
+    | 'expandLess'
+    | 'expandMore'
+    | 'addCircle';
 }
 
 export const Icon = ({ type }: Props): JSX.Element => {
@@ -73,6 +81,45 @@ export const Icon = ({ type }: Props): JSX.Element => {
         >
           <path d="M0 0h24v24H0V0z" fill="none" />
           <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+        </svg>
+      )}
+
+      {type === 'expandLess' && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z" />
+        </svg>
+      )}
+
+      {type === 'expandMore' && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" />
+        </svg>
+      )}
+
+      {type === 'addCircle' && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#7bc67e"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
         </svg>
       )}
     </>

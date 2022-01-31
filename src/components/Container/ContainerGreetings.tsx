@@ -7,8 +7,9 @@ import { Button } from '@components/Button';
 import { useTheme } from '@emotion/react';
 import { showToast } from '@utils/showToast';
 import { Baseline } from '@interface/index';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { State } from '@store/interface';
+import { mediaPlanActions } from '@store/module/mediaPlan';
 
 const breakPoints = [768, 1000, 1200];
 
@@ -40,12 +41,19 @@ const StyledBox = styled.div(
 );
 
 export const ContainerGreetings = (): JSX.Element => {
+  const dispatch = useDispatch();
   const { baseline }: Baseline = useTheme();
   const { page, isTitle, isStartDate, isEndDate } = useSelector(
     (state: State) => state.mediaPlan
   );
 
   const onHandleClick = () => {
+    if (!page) {
+      dispatch(mediaPlanActions.handleTitle(''));
+      dispatch(mediaPlanActions.handleStartDate(''));
+      dispatch(mediaPlanActions.handleEndDate(''));
+    }
+
     showToast('Form reseted', 'success');
   };
 

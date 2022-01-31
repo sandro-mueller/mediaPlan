@@ -1,3 +1,5 @@
+import { ChannelOptions } from '@interface/index';
+
 /**
  * @author Sandro Müller
  * @page The current page of the wizard
@@ -9,10 +11,11 @@
  * @isStartDate Determines if start date has a value
  * @isEndDate Determines if end date has a value
  * @isDateError Determines if date has wrong input
+ * @currentOption Selected option to calculate budget
  */
 
 export interface MediaPlan {
-  page: string;
+  page: number;
   title: string;
   type: string;
   startDate: string;
@@ -21,6 +24,8 @@ export interface MediaPlan {
   isStartDate: boolean;
   isEndDate: boolean;
   isDateError: boolean;
+
+  currentOption: ChannelOptions;
 }
 
 export interface State {

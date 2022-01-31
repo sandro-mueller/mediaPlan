@@ -1,44 +1,48 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { mediaPlan } from '@store/preload/mediaPlan';
 
 const mediaPlanSlice = createSlice({
   name: 'mediaPlan',
   initialState: mediaPlan,
   reducers: {
-    handlePage: (state, action) => {
-      state.page = action.payload;
+    handlePage: (state, { payload }: PayloadAction<number>) => {
+      state.page = payload;
     },
 
-    handleTitle: (state, action) => {
-      state.title = action.payload;
+    handleTitle: (state, { payload }: PayloadAction<string>) => {
+      state.title = payload;
     },
 
-    handleType: (state, action) => {
-      state.type = action.payload;
+    handleType: (state, { payload }: PayloadAction<string>) => {
+      state.type = payload;
     },
 
-    handleStartDate: (state, action) => {
-      state.startDate = action.payload;
+    handleStartDate: (state, { payload }: PayloadAction<string>) => {
+      state.startDate = payload;
     },
 
-    handleEndDate: (state, action) => {
-      state.endDate = action.payload;
+    handleEndDate: (state, { payload }: PayloadAction<string>) => {
+      state.endDate = payload;
     },
 
-    handleIsTitle: (state, action) => {
-      state.isTitle = action.payload;
+    handleIsTitle: (state, { payload }: PayloadAction<boolean>) => {
+      state.isTitle = payload;
     },
 
-    handleIsStartDate: (state, action) => {
-      state.isStartDate = action.payload;
+    handleIsStartDate: (state, { payload }: PayloadAction<boolean>) => {
+      state.isStartDate = payload;
     },
 
-    handleIsEndDate: (state, action) => {
-      state.isEndDate = action.payload;
+    handleIsEndDate: (state, { payload }: PayloadAction<boolean>) => {
+      state.isEndDate = payload;
     },
 
-    handleIsDateError: (state, action) => {
-      state.isDateError = action.payload;
+    handleIsDateError: (state, { payload }: PayloadAction<boolean>) => {
+      state.isDateError = payload;
+    },
+
+    handleCurrentOption: (state, { payload }: PayloadAction<string>) => {
+      state.currentOption = payload;
     },
   },
 });
