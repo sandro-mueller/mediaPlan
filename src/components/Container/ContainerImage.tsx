@@ -17,6 +17,7 @@ const mediaQuery = facepaint(
 
 const StyledContainerImage = styled.div(
   mediaQuery({
+    position: 'relative',
     display: ['none', 'block'],
     margin: 'auto',
   })
@@ -25,7 +26,7 @@ const StyledContainerImage = styled.div(
 export const ContainerImage = () => {
   return (
     <StyledContainerImage>
-      <Lottie options={options} width={500} />
+      <Lottie options={options} height={380} width={500} />
     </StyledContainerImage>
   );
 };

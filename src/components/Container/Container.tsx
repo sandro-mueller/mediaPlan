@@ -7,7 +7,7 @@ export const Container = () => {
   return (
     <>
       <ContainerGreetings />
-      <Box display={'flex'} bgcolor={'red'}>
+      <Box display={'flex'}>
         <ContainerForm />
         <ContainerImage />
       </Box>
