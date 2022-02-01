@@ -7,11 +7,17 @@ import { FormChannelHeadlines } from './Body/FormChannelHeadlines';
 import { FormChannelOptions } from './Body/FormChannelOptions';
 import { useDispatch, useSelector } from 'react-redux';
 import { mediaPlanActions } from '@store/module/mediaPlan';
+import { Box } from '@components/Box';
+import { Typography } from '@components/Typography';
+import { useTheme } from '@emotion/react';
+import { Baseline } from '@interface/index';
 
 export const FormChannel = (): JSX.Element => {
   const dispatch = useDispatch();
-  const { currentOption } = useSelector((state: State) => state.mediaPlan);
-  const { channelOptions } = useSelector((state: State) => state.mediaPlan);
+  const { baseline }: Baseline = useTheme();
+  const { currentOption, channelOptions } = useSelector(
+    (state: State) => state.mediaPlan
+  );
 
   const onHandleClick = () => {
     const payload = {
@@ -20,6 +26,7 @@ export const FormChannel = (): JSX.Element => {
     };
 
     dispatch(mediaPlanActions.handleChannelOption(payload));
+    console.log(currentOption);
 
     showToast(`${currentOption} added`);
   };
@@ -31,9 +38,15 @@ export const FormChannel = (): JSX.Element => {
       <FormChannelHeadlines />
       <FormChannelOptions channelOptions={channelOptions} />
 
-      {/* <Box textAlign={'center'} mt={`${baseline.b4}px`} mb={`${baseline.b4}px`}>
-        <Typography variant={'body2'}>- No option added -</Typography>
-      </Box> */}
+      {!channelOptions.length && (
+        <Box
+          textAlign={'center'}
+          mt={`${baseline.b4}px`}
+          mb={`${baseline.b4}px`}
+        >
+          <Typography variant={'body2'}>- No option added -</Typography>
+        </Box>
+      )}
 
       <FormChannelCta />
     </>
