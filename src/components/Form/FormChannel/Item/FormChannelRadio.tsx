@@ -1,5 +1,5 @@
 import { Box } from '@components/Box';
-import { Radio } from '@components/Form/elements/Radio';
+import { Radio } from '@components/Form/elements';
 
 export const FormChannelRadio = () => {
   return (

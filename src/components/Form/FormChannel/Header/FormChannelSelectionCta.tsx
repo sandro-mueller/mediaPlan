@@ -1,10 +1,10 @@
-import { Box } from '@components/Box';
-import { Icon } from '@components/Icon';
-import { Typography } from '@components/Typography';
+import { useSelector } from 'react-redux';
 import { useTheme } from '@emotion/react';
+import { Box } from '@components/Box';
+import { Typography } from '@components/Typography';
+import { Icon } from '@components/Icon';
 import { Baseline } from '@interface/index';
 import { State } from '@store/interface';
-import { useSelector } from 'react-redux';
 
 interface Props {
   handleClick: () => void;

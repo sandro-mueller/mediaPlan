@@ -1,7 +1,7 @@
-import { Typography } from '@components/Typography';
-import styled from '@emotion/styled';
-import { ColorsVariants, ButtonVariants, ButtonSize } from '@type/index';
 import React from 'react';
+import styled from '@emotion/styled';
+import { Typography } from '@components/Typography';
+import { ColorsVariants, ButtonVariants, ButtonSize } from '@type/index';
 
 interface Props {
   variant: ButtonVariants;

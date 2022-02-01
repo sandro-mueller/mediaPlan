@@ -4,7 +4,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from '@store/index';
 import { ReactElement } from 'react';
 
-export const CreateProvider = (Component: ReactElement) => {
+export const createProvider = (Component: ReactElement) => {
   return (
     <React.StrictMode>
       <Provider store={store}>

@@ -1,7 +1,7 @@
+import facepaint from 'facepaint';
 import Lottie from 'react-lottie';
 import signin from '@assets/images/MediaPlayer.json';
 import styled from '@emotion/styled';
-import facepaint from 'facepaint';
 import { LOTTIE_OPTIONS } from '@constants/lottie';
 
 const options = {

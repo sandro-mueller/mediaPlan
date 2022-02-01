@@ -1,8 +1,8 @@
-import { CHANNEL_OPTIONS } from '@constants/channel';
-import { Select } from '@components/Form/elements/Select';
-import { mediaPlanActions } from '@store/module/mediaPlan';
 import { useDispatch, useSelector } from 'react-redux';
+import { Select } from '@components/Form/elements';
+import { CHANNEL_OPTIONS } from '@constants/channel';
 import { State } from '@store/interface';
+import { mediaPlanActions } from '@store/module/mediaPlan';
 
 export const FormChannelSelection = (): JSX.Element => {
   const dispatch = useDispatch();

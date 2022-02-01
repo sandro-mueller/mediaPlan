@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import facepaint from 'facepaint';
 import { useSelector } from 'react-redux';
 import { State } from '@store/interface';
-import { FormChannel } from '@components/Form/FormChannel/FormChannel';
-import { FormGeneral } from '@components/Form/FormGeneral/FormGeneral';
+import { FormChannel } from '@components/Form/FormChannel';
+import { FormGeneral } from '@components/Form/FormGeneral';
 
 const breakPoints = [1000, 1200];
 const mediaQuery = facepaint(

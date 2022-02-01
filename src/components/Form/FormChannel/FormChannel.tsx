@@ -6,12 +6,12 @@ import { useSelector } from 'react-redux';
 import { State } from '@store/interface';
 import { Box } from '@components/Box';
 import { FormChannelRow } from './Grid/FormChannelRow';
+import { useTheme } from '@emotion/react';
 import { FormChannelHeadlines } from './Body/FormChannelHeadlines';
 import { FormChannelText } from './Item/FormChannelText';
 import { FormChannelTextField } from './Item/FormChannelTextField';
 import { FormChannelRadio } from './Item/FormChannelRadio';
 import { Baseline } from '@interface/index';
-import { useTheme } from '@emotion/react';
 
 export const FormChannel = (): JSX.Element => {
   const { currentOption } = useSelector((state: State) => state.mediaPlan);

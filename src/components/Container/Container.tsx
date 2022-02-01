@@ -1,7 +1,7 @@
-import { ContainerImage } from './ContainerImage';
 import { Box } from '@components/Box';
-import { ContainerForm } from './ContainerForm';
 import { ContainerGreetings } from './ContainerGreetings';
+import { ContainerForm } from './ContainerForm';
+import { ContainerImage } from './ContainerImage';
 
 export const Container = (): JSX.Element => {
   return (
