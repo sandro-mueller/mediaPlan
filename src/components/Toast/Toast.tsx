@@ -4,7 +4,7 @@ import { toastOptions } from './Toast.option';
 
 export const ToastComponent = (): JSX.Element => {
   return (
-    <Toaster position="top-right" toastOptions={toastOptions}>
+    <Toaster position="top-center" toastOptions={toastOptions}>
       {(t) => <ToastBar t={t} />}
     </Toaster>
   );

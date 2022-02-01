@@ -18,7 +18,7 @@ const StyledTypography = styled.div<Props>(
     ...typography[props.variant],
     color: props.color
       ? props.color
-      : props.variant === 'body1'
+      : props.variant === 'body1' || props.variant === 'body2'
       ? props.theme.colors.text
       : typography[props.variant].color,
   })

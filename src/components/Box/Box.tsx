@@ -11,6 +11,7 @@ type Props = {
   flexDirection?: Property.FlexDirection;
   justifyContent?: Property.JustifyContent;
   alignItems?: Property.AlignItems;
+  textAlign?: Property.TextAlign;
   p?: Property.Padding;
   m?: Property.Margin;
   mt?: Property.MarginTop;
@@ -32,6 +33,7 @@ export const Box = styled.div<Props>({}, (props) => ({
   flexDirection: props.flexDirection,
   justifyContent: props.justifyContent,
   alignItems: props.alignItems,
+  textAlign: props.textAlign,
   padding: props.p,
   margin: props.m,
   marginTop: props.mt,
