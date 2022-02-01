@@ -82,3 +82,10 @@ export type ChannelOptions = [
   'Affiliate',
   'Remarketing'
 ];
+
+export type Channels =
+  | 'SEA'
+  | 'Display'
+  | 'Social'
+  | 'Affiliate'
+  | 'Remarketing';

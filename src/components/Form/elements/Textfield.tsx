@@ -23,7 +23,7 @@ interface TextfieldProps {
   placeholder?: string;
   isCounter?: boolean;
   width?: string;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const options = {
