@@ -15,7 +15,7 @@ import {
 } from 'redux-persist';
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
-const middleware = isDevelopment ? [logger] : [];
+const middleware = !isDevelopment ? [logger] : [];
 
 // STORE
 export const store = configureStore({

@@ -1,3 +1,4 @@
+import { Channels } from '@type/index';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { mediaPlan } from '@store/preload/mediaPlan';
 
@@ -5,6 +6,10 @@ const mediaPlanSlice = createSlice({
   name: 'mediaPlan',
   initialState: mediaPlan,
   reducers: {
+    handleMode: (state, { payload }: PayloadAction<string>) => {
+      state.mode = payload;
+    },
+
     handlePage: (state, { payload }: PayloadAction<number>) => {
       state.page = payload;
     },
@@ -45,8 +50,19 @@ const mediaPlanSlice = createSlice({
       state.currentOption = payload;
     },
 
-    handleMode: (state, { payload }: PayloadAction<string>) => {
-      state.mode = payload;
+    handleChannelItem: (
+      state,
+      {
+        payload,
+      }: PayloadAction<{
+        name: Channels;
+        type: 'text' | 'radio';
+        value: string;
+      }>
+    ) => {
+      const { name, type, value } = payload;
+
+      state.channelItems[name as keyof typeof state.channelItems][type] = value;
     },
   },
 });

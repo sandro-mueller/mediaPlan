@@ -6,6 +6,7 @@ import { Textfield } from '@components/Form/elements';
 import { Baseline } from '@interface/index';
 import { State } from '@store/interface';
 import { mediaPlanActions } from '@store/module/mediaPlan';
+import { TypeVariants } from '@type/index';
 
 export const FormGeneralBasis = () => {
   const dispatch = useDispatch();
@@ -48,7 +49,7 @@ export const FormGeneralBasis = () => {
 
   const onHandleChange = (
     event: React.ChangeEvent<HTMLInputElement>,
-    type: 'title' | 'startDate' | 'endDate'
+    type: TypeVariants
   ) => {
     const { value } = event.target;
 

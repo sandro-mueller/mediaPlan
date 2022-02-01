@@ -4,6 +4,7 @@ import checkmark from '@assets/images/checkmark.json';
 import styled from '@emotion/styled';
 import { Box } from '@components/Box';
 import { LOTTIE_OPTIONS } from '@constants/lottie';
+import { Channels } from '@type/index';
 
 interface Props {
   isError: boolean;
@@ -14,6 +15,7 @@ interface HelperProps {
 }
 
 interface TextfieldProps {
+  name?: Channels | '';
   isError?: boolean;
   type?: 'text' | 'date';
   value: string;
@@ -89,6 +91,7 @@ const StyledHelperText = styled.span<HelperProps>(
 );
 
 export const Textfield = ({
+  name = '',
   isError = false,
   type = 'text',
   value,
@@ -102,6 +105,7 @@ export const Textfield = ({
   return (
     <Box position={'relative'} width={width}>
       <StyledTextfield
+        name={name}
         placeholder={placeholder}
         maxLength={32}
         isError={isError}

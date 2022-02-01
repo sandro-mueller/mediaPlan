@@ -3,7 +3,9 @@ import { Channels } from '@type/index';
 
 interface Props {
   name: Channels;
+  value: 'constant' | 'exclude';
   id: string;
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const StyledRadioReplacement = styled.div(
@@ -49,11 +51,22 @@ const StyledLabel = styled.label({
   },
 });
 
-export const Radio = ({ name, id }: Props): JSX.Element => {
+export const Radio = ({
+  name,
+  value,
+  id,
+  handleChange,
+}: Props): JSX.Element => {
   return (
     <>
       <StyledLabel htmlFor={id}>
-        <StyledRadio id={id} name={name} type={'radio'} />
+        <StyledRadio
+          id={id}
+          name={name}
+          value={value}
+          type={'radio'}
+          onChange={handleChange}
+        />
         <StyledRadioReplacement />
       </StyledLabel>
     </>

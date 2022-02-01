@@ -52,3 +52,13 @@ export type Channels =
   | 'Social'
   | 'Affiliate'
   | 'Remarketing';
+
+/**
+ * Used to check last type display error on either on of the strings below
+ */
+export type TypeVariants = 'title' | 'startDate' | 'endDate';
+
+/**
+ * Used to choose between light and dark mode
+ */
+export type ThemeMode = 'light' | 'dark';
