@@ -6,10 +6,17 @@ interface Props {
   name: Channels;
   value: 'constant' | 'exclude';
   id: string;
+  checked?: boolean;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const FormChannelRadio = ({ name, value, id, handleChange }: Props) => {
+export const FormChannelRadio = ({
+  name,
+  value,
+  id,
+  checked = false,
+  handleChange,
+}: Props) => {
   return (
     <Box
       display={'flex'}
@@ -17,7 +24,13 @@ export const FormChannelRadio = ({ name, value, id, handleChange }: Props) => {
       alignItems={'center'}
       height={'56px'}
     >
-      <Radio name={name} value={value} id={id} handleChange={handleChange} />
+      <Radio
+        name={name}
+        value={value}
+        id={id}
+        checked={checked}
+        handleChange={handleChange}
+      />
     </Box>
   );
 };

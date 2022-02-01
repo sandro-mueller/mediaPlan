@@ -1,4 +1,4 @@
-import { ChannelOptions, ThemeMode, TypeVariants } from '@type/index';
+import { Channels, ThemeMode, TypeVariants } from '@type/index';
 
 /**
  * @author Sandro Müller
@@ -13,6 +13,8 @@ import { ChannelOptions, ThemeMode, TypeVariants } from '@type/index';
  * @isEndDate Determines if end date has a value
  * @isDateError Determines if date has wrong input
  * @currentOption Selected option to calculate budget
+ * @channelOptions Array to render channel items for DOM
+ * @channelItems Object to keep track of entered values for channel items
  */
 
 export interface MediaPlan {
@@ -31,8 +33,8 @@ export interface MediaPlan {
   isDateError: boolean;
 
   // CHANNEL
-  currentOption: ChannelOptions;
-
+  currentOption: Channels;
+  channelOptions: { id: number; text: Channels }[];
   channelItems: {
     SEA: {
       text: string;

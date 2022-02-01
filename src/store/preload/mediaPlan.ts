@@ -15,6 +15,7 @@ export const mediaPlan = {
 
   // CHANNEL
   currentOption: 'SEA',
+  channelOptions: [],
   channelItems: {
     SEA: {
       text: '',

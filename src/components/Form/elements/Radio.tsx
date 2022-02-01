@@ -2,9 +2,10 @@ import styled from '@emotion/styled/macro';
 import { Channels } from '@type/index';
 
 interface Props {
+  id: string;
   name: Channels;
   value: 'constant' | 'exclude';
-  id: string;
+  checked?: boolean;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -52,9 +53,10 @@ const StyledLabel = styled.label({
 });
 
 export const Radio = ({
+  id,
   name,
   value,
-  id,
+  checked = false,
   handleChange,
 }: Props): JSX.Element => {
   return (
@@ -65,6 +67,7 @@ export const Radio = ({
           name={name}
           value={value}
           type={'radio'}
+          checked={checked}
           onChange={handleChange}
         />
         <StyledRadioReplacement />

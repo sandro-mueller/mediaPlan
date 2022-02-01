@@ -50,6 +50,15 @@ const mediaPlanSlice = createSlice({
       state.currentOption = payload;
     },
 
+    handleChannelOption: (
+      state,
+      { payload }: PayloadAction<{ id: number; text: Channels }>
+    ) => {
+      state.channelOptions = JSON.parse(
+        JSON.stringify([...state.channelOptions, payload])
+      );
+    },
+
     handleChannelItem: (
       state,
       {

@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import { Box } from '@components/Box';
 import { Icon } from '@components/Icon';
-import { ChannelOptions } from '@type/index';
+import { Channels, ChannelOptions } from '@type/index';
 
 interface Props {
-  value: ChannelOptions;
+  value: Channels;
   options: ChannelOptions;
   handleChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
