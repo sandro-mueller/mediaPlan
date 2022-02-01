@@ -54,38 +54,3 @@ export interface Duration {
 export interface BreakPoints {
   breakPoints: Array<number>;
 }
-
-// TYPES
-export type TypographyVariants =
-  | 'h1'
-  | 'h2'
-  | 'body1'
-  | 'body2'
-  | 'buttonLarge'
-  | 'buttonMedium';
-
-export type ColorsVariants =
-  | '#3f51b5'
-  | '#28abe2'
-  | '#7bc67e'
-  | '#F44336'
-  | 'rgba(0, 0, 0, 0.6)'
-  | '#fff';
-
-export type ButtonVariants = 'outlined' | 'contained';
-export type ButtonSize = 'large' | 'small';
-
-export type ChannelOptions = [
-  'SEA',
-  'Display',
-  'Social',
-  'Affiliate',
-  'Remarketing'
-];
-
-export type Channels =
-  | 'SEA'
-  | 'Display'
-  | 'Social'
-  | 'Affiliate'
-  | 'Remarketing';

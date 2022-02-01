@@ -1,4 +1,4 @@
-import { ChannelOptions } from '@interface/index';
+import { ChannelOptions } from '@type/index';
 
 export const CHANNEL_OPTIONS: ChannelOptions = [
   'SEA',

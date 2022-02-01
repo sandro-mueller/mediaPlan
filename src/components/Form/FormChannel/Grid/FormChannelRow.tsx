@@ -4,7 +4,7 @@ interface Props {
   component: React.ReactNode[];
 }
 
-export const FormChannelColumns = ({ component }: Props) => {
+export const FormChannelRow = ({ component }: Props) => {
   return (
     <Box display={'flex'}>
       <Box width={'25%'}>{component[0]}</Box>

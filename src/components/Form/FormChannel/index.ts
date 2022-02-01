@@ -1,4 +1,20 @@
 export { FormChannel } from './FormChannel';
-export { FormChannelCta } from './FormChannelCta';
-export { FormChannelSelection } from './FormChannelSelection';
-export { FormChannelSelectionCta } from './FormChannelSelectionCta';
+
+// HEADER
+export { FormChannelSelection, FormChannelSelectionCta } from './Header';
+
+// BODY
+export { FormChannelHeadlines } from './Body';
+
+// FOOTER
+export { FormChannelCta } from './Footer';
+
+// GRID
+export { FormChannelRow } from './Grid';
+
+// ITEM
+export {
+  FormChannelRadio,
+  FormChannelText,
+  FormChannelTextField,
+} from './Item';

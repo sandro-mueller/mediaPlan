@@ -1,5 +1,5 @@
 import styled from '@emotion/styled/macro';
-import { Channels } from '@interface/index';
+import { Channels } from '@type/index';
 
 interface Props {
   name: Channels;

@@ -1,3 +1,7 @@
 export { FormGeneral } from './FormGeneral';
-export { FormGeneralCta } from './FormGeneralCta';
-export { FormGeneralBasis } from './FormGeneralBasis';
+
+// HEADER
+export { FormGeneralBasis } from './Header';
+
+// FOOTER
+export { FormGeneralCta } from './Footer';

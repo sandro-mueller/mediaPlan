@@ -1,5 +1,5 @@
 import { CHANNEL_OPTIONS } from '@constants/channel';
-import { Select } from '../elements/Select';
+import { Select } from '@components/Form/elements/Select';
 import { mediaPlanActions } from '@store/module/mediaPlan';
 import { useDispatch, useSelector } from 'react-redux';
 import { State } from '@store/interface';

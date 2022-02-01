@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { TypographyVariants, ColorsVariants } from '@interface/index';
+import { ColorsVariants, TypographyVariants } from '@type/index';
 import { typography } from './TypographyVariants';
 
 interface Props {

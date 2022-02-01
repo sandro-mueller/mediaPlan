@@ -1,4 +1,4 @@
-import { ChannelOptions } from '@interface/index';
+import { ChannelOptions } from '@type/index';
 
 /**
  * @author Sandro Müller
@@ -12,6 +12,7 @@ import { ChannelOptions } from '@interface/index';
  * @isEndDate Determines if end date has a value
  * @isDateError Determines if date has wrong input
  * @currentOption Selected option to calculate budget
+ * @mode Detmines the color theme of the app
  */
 
 export interface MediaPlan {

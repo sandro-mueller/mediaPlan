@@ -1,7 +1,7 @@
 import { Box } from '@components/Box';
 import { Icon } from '@components/Icon';
 import styled from '@emotion/styled';
-import { ChannelOptions } from '@interface/index';
+import { ChannelOptions } from '@type/index';
 
 interface Props {
   value: ChannelOptions;

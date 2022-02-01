@@ -7,6 +7,7 @@ declare module '@assets';
 declare module '@constants';
 declare module '@theme';
 declare module '@interface';
+declare module '@type';
 declare module '@utils';
 declare module '@store';
 
