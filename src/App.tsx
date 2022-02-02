@@ -8,6 +8,7 @@ import { theme } from '@theme/index';
 import { State } from '@store/interface';
 import { useSelector } from 'react-redux';
 import { useToggleTheme } from './hooks/useToggleTheme';
+import { Modal } from '@components/Modal';
 
 export const App = () => {
   const { mode } = useSelector((state: State) => state.mediaPlan);
@@ -15,6 +16,7 @@ export const App = () => {
   return (
     <ThemeProvider theme={useToggleTheme(mode)}>
       <Box height={'100vh'} bgcolor={theme.colors.white}>
+        <Modal />
         <AppBar backgroundColor={theme.colors.primary} />
         <Box mt={`${theme.baseline.b4}px`}>
           <Toast />

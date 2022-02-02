@@ -45,5 +45,9 @@ export const theme = {
     leavingScreen: 195,
   },
 
+  zIndex: {
+    modal: 1300,
+  },
+
   breakPoints: [0, 600, 900, 1200, 1536],
 };

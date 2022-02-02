@@ -59,6 +59,10 @@ declare module '@emotion/react' {
       leavingScreen: number;
     };
 
+    zIndex: {
+      modal: number;
+    };
+
     breakPoints: Array<number>;
 
     ThemeProvider: ThemeProvider;

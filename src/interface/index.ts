@@ -51,6 +51,10 @@ export interface Duration {
   leavingScreen: number;
 }
 
+export interface ZIndex {
+  modal: number;
+}
+
 export interface BreakPoints {
   breakPoints: Array<number>;
 }
