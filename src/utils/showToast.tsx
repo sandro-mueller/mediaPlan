@@ -11,7 +11,7 @@ export const showToast = (title: string, type?: ToastType) => {
   }
 
   if (type === 'error') {
-    return toast.success(title, {
+    return toast.error(title, {
       style: { backgroundColor: `${theme.colors.error}` },
     });
   }

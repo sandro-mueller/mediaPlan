@@ -73,6 +73,16 @@ const mediaPlanSlice = createSlice({
 
       state.channelItems[name as keyof typeof state.channelItems][type] = value;
     },
+
+    handleChanelItemDelete: (state, { payload }: PayloadAction<string>) => {
+      const channelOptions: { id: number; text: Channels }[] =
+        state.channelOptions;
+
+      //@ts-ignore
+      state.channelOptions = channelOptions.filter(
+        (channel) => channel.text !== payload
+      );
+    },
   },
 });
 

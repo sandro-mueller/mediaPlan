@@ -11,6 +11,7 @@ import { Box } from '@components/Box';
 import { Typography } from '@components/Typography';
 import { useTheme } from '@emotion/react';
 import { Baseline } from '@interface/index';
+import { FormChannelTotal } from './Body';
 
 export const FormChannel = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -26,7 +27,6 @@ export const FormChannel = (): JSX.Element => {
     };
 
     dispatch(mediaPlanActions.handleChannelOption(payload));
-    console.log(currentOption);
 
     showToast(`${currentOption} added`);
   };
@@ -48,6 +48,7 @@ export const FormChannel = (): JSX.Element => {
         </Box>
       )}
 
+      <FormChannelTotal />
       <FormChannelCta />
     </>
   );

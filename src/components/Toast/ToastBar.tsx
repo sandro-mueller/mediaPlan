@@ -15,9 +15,7 @@ export const ToastBarComponent = ({ t }): JSX.Element => {
           {t.type === 'error' && <Icon type="reportIcon" />}
           {t.type === 'success' && <Icon type="checkCircle" />}
           {t.type === 'blank' && <Icon type="infoIcon" />}
-
           {message}
-
           {t.type !== 'loading' && (
             <Box onClick={() => onHandleClick(t.id)} bgcolor={'transparent'}>
               <Icon type="closeIcon" />
