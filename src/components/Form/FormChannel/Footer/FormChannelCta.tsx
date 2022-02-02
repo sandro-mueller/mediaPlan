@@ -18,11 +18,13 @@ export const FormChannelCta = () => {
   };
 
   const onHandleCopy = () => {
+    window.scrollTo(0, 0);
     dispatch(mediaPlanActions.handleModal());
     showToast('Plan copied', 'success');
   };
 
   const onHandleSave = () => {
+    window.scrollTo(0, 0);
     dispatch(mediaPlanActions.handleModal());
     showToast('Plan saved', 'success');
   };
