@@ -21,7 +21,11 @@ export const App = () => {
 
   return (
     <ThemeProvider theme={useToggleTheme(mode)}>
-      <Box minHeight={'100vh'} bgcolor={theme.colors.white}>
+      <Box
+        minHeight={'100vh'}
+        maxHeight={openModal ? '100vh' : '100%'}
+        bgcolor={theme.colors.white}
+      >
         <Modal open={openModal} handleClose={onHandleClose} />
         <AppBar backgroundColor={theme.colors.primary} />
         <Box mt={`${theme.baseline.b4}px`}>
