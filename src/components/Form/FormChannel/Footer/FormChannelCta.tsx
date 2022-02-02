@@ -1,15 +1,17 @@
 import lodash from 'lodash';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTheme } from '@emotion/react';
 import { Box } from '@components/Box';
 import { Button } from '@components/Button';
 import { Baseline } from '@interface/index';
 import { showToast } from '@utils/showToast';
 import { mediaPlanActions } from '@store/module/mediaPlan';
+import { State } from '@store/interface';
 
 export const FormChannelCta = () => {
   const dispatch = useDispatch();
   const { baseline }: Baseline = useTheme();
+  const { channelOptions } = useSelector((state: State) => state.mediaPlan);
 
   const onHandlePage = (page: number) => {
     dispatch(mediaPlanActions.handlePage(page));
@@ -46,6 +48,7 @@ export const FormChannelCta = () => {
           color={'#28abe2'}
           size={'large'}
           width={`calc(50% - ${baseline.b2}px)`}
+          disabled={!channelOptions.length}
           handleClick={lodash.throttle(onHandleCopy, 3000)}
         >
           Copy plan
@@ -57,6 +60,7 @@ export const FormChannelCta = () => {
         color={'#7bc67e'}
         size={'large'}
         fullWidth
+        disabled={!channelOptions.length}
         handleClick={lodash.throttle(onHandleSave, 3000)}
       >
         Save plan

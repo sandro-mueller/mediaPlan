@@ -111,6 +111,7 @@ export const Textfield = ({
         isError={isError}
         value={value}
         type={type}
+        autoComplete={'off'}
         onChange={handleChange}
       />
 
