@@ -10,6 +10,10 @@ const mediaPlanSlice = createSlice({
       state.mode = payload;
     },
 
+    handleModal: (state) => {
+      state.openModal = !state.openModal;
+    },
+
     handlePage: (state, { payload }: PayloadAction<number>) => {
       state.page = payload;
     },

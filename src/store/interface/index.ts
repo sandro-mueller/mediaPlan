@@ -3,6 +3,7 @@ import { Channels, ThemeMode, TypeVariants } from '@type/index';
 /**
  * @author Sandro Müller
  * @mode Detmines the color theme of the app
+ * @mode Detmines if the save plan modal is open
  * @page The current page of the wizard
  * @title The title of the media plan
  * @type Determines which values was changed last
@@ -20,6 +21,7 @@ import { Channels, ThemeMode, TypeVariants } from '@type/index';
 export interface MediaPlan {
   // APP
   mode: ThemeMode;
+  openModal: boolean;
 
   // GENERAL
   page: number;

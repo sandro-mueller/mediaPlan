@@ -6,6 +6,11 @@ import styled from '@emotion/styled';
 import { State } from '@store/interface';
 import { useSelector } from 'react-redux';
 
+interface Props {
+  open: boolean;
+  handleClose: () => void;
+}
+
 const StyledModal = styled.div(
   {
     height: '100%',
@@ -19,12 +24,13 @@ const StyledModal = styled.div(
   })
 );
 
-export const Modal = () => {
+export const Modal = ({ open, handleClose }: Props) => {
   const { baseline, colors, zIndex } = useTheme();
   const { title, startDate, endDate, channelItems } = useSelector(
     (state: State) => state.mediaPlan
   );
 
+  // Only for demonstration purposes
   const backendObject = `{
    title: ${title},
    startDate: ${startDate},
@@ -32,28 +38,52 @@ export const Modal = () => {
    
    channelItems: {
     sea: {
-     text: ${channelItems.SEA.text},
-     radio: '${channelItems.SEA.radio}',
+     text: ${channelItems.SEA.text.length ? channelItems.SEA.text : 'null'},
+     radio: '${
+       channelItems.SEA.radio.length ? channelItems.SEA.radio : 'null'
+     }',
     },
 
     display: {
-     text: ${channelItems.Display.text},
-     radio: '${channelItems.Display.radio}',
+     text: ${
+       channelItems.Display.text.length ? channelItems.Display.text : 'null'
+     },
+     radio: '${
+       channelItems.Display.radio.length ? channelItems.Display.radio : 'null'
+     }',
     },
     
     social: {
-     text: ${channelItems.Social.text},
-     radio: '${channelItems.Social.radio}',
+     text: ${
+       channelItems.Social.text.length ? channelItems.Social.text : 'null'
+     },
+     radio: '${
+       channelItems.Social.radio.length ? channelItems.Social.radio : 'null'
+     }',
     },
 
     affiliate: {
-     text: ${channelItems.Affiliate.text},
-     radio: '${channelItems.Affiliate.radio}',
+     text: ${
+       channelItems.Affiliate.text.length ? channelItems.Affiliate.text : 'null'
+     },
+     radio: '${
+       channelItems.Affiliate.radio.length
+         ? channelItems.Affiliate.radio
+         : 'null'
+     }',
     },
 
     remarketing: {
-     text: ${channelItems.Remarketing.text},
-     radio: '${channelItems.Remarketing.radio}',
+     text: ${
+       channelItems.Remarketing.text.length
+         ? channelItems.Remarketing.text
+         : 'null'
+     },
+     radio: '${
+       channelItems.Remarketing.radio.length
+         ? channelItems.Remarketing.radio
+         : 'null'
+     }',
     }
 }`;
 
@@ -63,7 +93,7 @@ export const Modal = () => {
         position={'absolute'}
         top={0}
         right={0}
-        display={'flex'}
+        display={open ? 'flex' : 'none'}
         justifyContent={'center'}
         alignItems={'center'}
         minHeight={'100vh'}
@@ -81,11 +111,12 @@ export const Modal = () => {
             <Typography variant={'body2'}>{backendObject}</Typography>
           </Box>
 
-          <Box width={'100%'} textAlign={'right'} mb={`${baseline.b3}px`}>
+          <Box width={'100%'} textAlign={'right'}>
             <Button
               variant={'contained'}
               color={'rgba(0, 0, 0, 0.6)'}
               size={'small'}
+              handleClick={handleClose}
             >
               Close
             </Button>

@@ -1,6 +1,7 @@
 export const mediaPlan = {
   // APP
   mode: 'light',
+  openModal: false,
 
   // GENERAL
   page: 0,

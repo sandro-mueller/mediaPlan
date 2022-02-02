@@ -18,10 +18,12 @@ export const FormChannelCta = () => {
   };
 
   const onHandleCopy = () => {
+    dispatch(mediaPlanActions.handleModal());
     showToast('Plan copied', 'success');
   };
 
   const onHandleSave = () => {
+    dispatch(mediaPlanActions.handleModal());
     showToast('Plan saved', 'success');
   };
 

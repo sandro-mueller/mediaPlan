@@ -6,17 +6,23 @@ import { Box } from '@components/Box';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from '@theme/index';
 import { State } from '@store/interface';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useToggleTheme } from './hooks/useToggleTheme';
 import { Modal } from '@components/Modal';
+import { mediaPlanActions } from '@store/module/mediaPlan';
 
 export const App = () => {
-  const { mode } = useSelector((state: State) => state.mediaPlan);
+  const { mode, openModal } = useSelector((state: State) => state.mediaPlan);
+  const dispatch = useDispatch();
+
+  const onHandleClose = () => {
+    dispatch(mediaPlanActions.handleModal());
+  };
 
   return (
     <ThemeProvider theme={useToggleTheme(mode)}>
       <Box height={'100vh'} bgcolor={theme.colors.white}>
-        <Modal />
+        <Modal open={openModal} handleClose={onHandleClose} />
         <AppBar backgroundColor={theme.colors.primary} />
         <Box mt={`${theme.baseline.b4}px`}>
           <Toast />
