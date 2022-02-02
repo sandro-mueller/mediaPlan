@@ -89,6 +89,12 @@ const mediaPlanSlice = createSlice({
       state.channelItems[name as keyof typeof state.channelItems]['text'] = '';
       state.channelItems[name as keyof typeof state.channelItems]['radio'] = '';
     },
+
+    handleClearChannel: (state) => {
+      state.currentOption = mediaPlan.currentOption;
+      state.channelOptions = mediaPlan.channelOptions;
+      state.channelItems = mediaPlan.channelItems;
+    },
   },
 });
 

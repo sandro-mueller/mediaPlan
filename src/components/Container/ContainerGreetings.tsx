@@ -43,7 +43,7 @@ const StyledBox = styled.div(
 export const ContainerGreetings = (): JSX.Element => {
   const dispatch = useDispatch();
   const { baseline }: Baseline = useTheme();
-  const { page, isTitle, isStartDate, isEndDate } = useSelector(
+  const { page, isTitle, isStartDate, isEndDate, channelOptions } = useSelector(
     (state: State) => state.mediaPlan
   );
 
@@ -54,8 +54,18 @@ export const ContainerGreetings = (): JSX.Element => {
       dispatch(mediaPlanActions.handleEndDate(''));
     }
 
-    showToast('Form reseted', 'success');
+    if (page) {
+      dispatch(mediaPlanActions.handleClearChannel());
+    }
+
+    showToast('Form cleared', 'success');
   };
+
+  const disabled = !page
+    ? !(isTitle || isStartDate || isEndDate)
+    : page
+    ? !channelOptions.length
+    : false;
 
   return (
     <Box mb={`${baseline.b4}px`}>
@@ -71,10 +81,10 @@ export const ContainerGreetings = (): JSX.Element => {
             variant={'outlined'}
             color={'#28abe2'}
             size={'large'}
-            disabled={!page && !(isTitle || isStartDate || isEndDate)}
+            disabled={disabled}
             handleClick={lodash.throttle(onHandleClick, 3000)}
           >
-            Reset Form
+            Clear Form
           </Button>
         </StyledBox>
       </StyledContainerGreetings>
