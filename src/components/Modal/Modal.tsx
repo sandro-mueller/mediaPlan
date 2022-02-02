@@ -99,9 +99,16 @@ export const Modal = ({ open, handleClose }: Props) => {
         minHeight={'100vh'}
         width={'100%'}
         p={`${baseline.b3}px`}
-        bgcolor={colors.text}
         zIndex={zIndex.modal}
       >
+        <Box
+          height={'100%'}
+          width={'100%'}
+          position={'fixed'}
+          top={0}
+          zIndex={-1}
+          bgcolor={colors.text}
+        />
         <StyledModal>
           <Box mb={`${baseline.b3}px`}>
             <Typography variant={'h2'}>Backend</Typography>

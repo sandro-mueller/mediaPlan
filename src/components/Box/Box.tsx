@@ -7,6 +7,7 @@ type Props = {
   right?: Property.Right;
   display?: Property.Display;
   height?: Property.Height;
+  maxHeight?: Property.Height;
   minHeight?: Property.MinHeight;
   width?: Property.Width;
   flexDirection?: Property.FlexDirection;
@@ -22,6 +23,7 @@ type Props = {
   cursor?: Property.Cursor;
   pointerEvents?: Property.PointerEvents;
   zIndex?: Property.ZIndex;
+  overflow?: Property.Overflow;
   bgcolor?: Property.BackgroundColor;
 };
 
@@ -31,6 +33,7 @@ export const Box = styled.div<Props>({}, (props) => ({
   right: props.right,
   display: props.display,
   height: props.height,
+  maxHeight: props.maxHeight,
   minHeight: props.minHeight,
   width: props.width,
   flexDirection: props.flexDirection,
@@ -46,5 +49,6 @@ export const Box = styled.div<Props>({}, (props) => ({
   cursor: props.cursor,
   pointerEvents: props.pointerEvents,
   zIndex: props.zIndex,
+  overflow: props.overflow,
   backgroundColor: props.bgcolor,
 }));
