@@ -30,7 +30,7 @@ export const FormGeneralBasis = () => {
       dispatch(mediaPlanActions.handleIsTitle(!!title));
       dispatch(mediaPlanActions.handleIsStartDate(!!startDate));
       dispatch(mediaPlanActions.handleIsEndDate(!!endDate));
-    }, 500);
+    }, 300);
 
     return () => clearTimeout(timer);
   }, [title, startDate, endDate, dispatch]);
@@ -42,7 +42,7 @@ export const FormGeneralBasis = () => {
         const isError = Date.parse(startDate) > Date.parse(endDate);
         dispatch(mediaPlanActions.handleIsDateError(isError));
       }
-    }, 500);
+    }, 300);
 
     return () => clearTimeout(timer);
   }, [startDate, endDate, dispatch]);

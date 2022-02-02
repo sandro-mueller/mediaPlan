@@ -74,14 +74,20 @@ const mediaPlanSlice = createSlice({
       state.channelItems[name as keyof typeof state.channelItems][type] = value;
     },
 
-    handleChanelItemDelete: (state, { payload }: PayloadAction<string>) => {
+    handleChanelItemDelete: (
+      state,
+      { payload: name }: PayloadAction<string>
+    ) => {
       const channelOptions: { id: number; text: Channels }[] =
         state.channelOptions;
 
       //@ts-ignore
       state.channelOptions = channelOptions.filter(
-        (channel) => channel.text !== payload
+        (channel) => channel.text !== name
       );
+
+      state.channelItems[name as keyof typeof state.channelItems]['text'] = '';
+      state.channelItems[name as keyof typeof state.channelItems]['radio'] = '';
     },
   },
 });

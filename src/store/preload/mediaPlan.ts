@@ -19,27 +19,27 @@ export const mediaPlan = {
   channelItems: {
     SEA: {
       text: '',
-      radio: '',
+      radio: 'constant',
     },
 
     Display: {
       text: '',
-      radio: '',
+      radio: 'constant',
     },
 
     Social: {
       text: '',
-      radio: '',
+      radio: 'constant',
     },
 
     Affiliate: {
       text: '',
-      radio: '',
+      radio: 'constant',
     },
 
     Remarketing: {
       text: '',
-      radio: '',
+      radio: 'constant',
     },
   },
 };

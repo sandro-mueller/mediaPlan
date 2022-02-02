@@ -45,6 +45,8 @@ export const FormChannelOptions = ({ channelOptions }: Props) => {
               <FormChannelTextField
                 name={option.text}
                 value={channelItems[option.text].text}
+                isError={isNaN(+channelItems[option.text].text)}
+                helperText={'Enter numbers only'}
                 handleChange={onHandleChange}
               />,
 

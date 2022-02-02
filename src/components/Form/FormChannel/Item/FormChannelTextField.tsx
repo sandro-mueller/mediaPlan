@@ -6,18 +6,29 @@ import { Channels } from '@type/index';
 interface Props {
   name: Channels;
   value: string;
+  isError: boolean;
+  helperText: string;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const FormChannelTextField = ({ name, value, handleChange }: Props) => {
+export const FormChannelTextField = ({
+  name,
+  value,
+  isError,
+  helperText,
+  handleChange,
+}: Props) => {
   const { baseline }: Baseline = useTheme();
 
   return (
     <Textfield
-      name={name}
       width={`calc(100% - ${baseline.b2}px)`}
-      placeholder={'0.00'}
+      name={name}
+      isError={isError}
+      isValue={!!value}
+      helperText={isError ? helperText : ''}
       value={value}
+      placeholder={'0.00'}
       handleChange={handleChange}
     />
   );
