@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@components/Box';
 import { useDispatch, useSelector } from 'react-redux';
 import { Channels } from '@type/index';
-import { mediaPlanActions } from '@store/module/mediaPlan';
+import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { State } from '@store/interface';
 import { useTheme } from '@emotion/react';
 import { Baseline } from '@interface/index';

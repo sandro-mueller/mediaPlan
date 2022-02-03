@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Select } from '@components/Form/elements';
 import { CHANNEL_OPTIONS } from '@constants/channel';
 import { State } from '@store/interface';
-import { mediaPlanActions } from '@store/module/mediaPlan';
+import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { Channels } from '@type/index';
 import { useCallback, useEffect, useMemo } from 'react';
 

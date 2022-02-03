@@ -3,7 +3,7 @@ import { Icon } from '@components/Icon';
 import { Typography } from '@components/Typography';
 import { useTheme } from '@emotion/react';
 import { Baseline } from '@interface/index';
-import { mediaPlanActions } from '@store/module/mediaPlan';
+import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { Channels } from '@type/index';
 import { showToast } from '@utils/showToast';
 import { useDispatch } from 'react-redux';

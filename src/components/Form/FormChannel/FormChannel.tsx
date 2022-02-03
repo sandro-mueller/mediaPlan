@@ -6,7 +6,7 @@ import { State } from '@store/interface';
 import { FormChannelHeadlines } from './Body/FormChannelHeadlines';
 import { FormChannelOptions } from './Body/FormChannelOptions';
 import { useDispatch, useSelector } from 'react-redux';
-import { mediaPlanActions } from '@store/module/mediaPlan';
+import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { Box } from '@components/Box';
 import { Typography } from '@components/Typography';
 import { useTheme } from '@emotion/react';

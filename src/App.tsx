@@ -9,7 +9,7 @@ import { State } from '@store/interface';
 import { useDispatch, useSelector } from 'react-redux';
 import { useToggleTheme } from './hooks/useToggleTheme';
 import { Modal } from '@components/Modal';
-import { mediaPlanActions } from '@store/module/mediaPlan';
+import { mediaPlanActions } from '@store/feature/mediaPlan';
 
 export const App = () => {
   const { mode, openModal } = useSelector((state: State) => state.mediaPlan);

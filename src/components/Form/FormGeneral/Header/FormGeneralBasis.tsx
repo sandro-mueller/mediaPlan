@@ -5,7 +5,7 @@ import { Box } from '@components/Box';
 import { Textfield } from '@components/Form/elements';
 import { Baseline } from '@interface/index';
 import { State } from '@store/interface';
-import { mediaPlanActions } from '@store/module/mediaPlan';
+import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { TypeVariants } from '@type/index';
 
 export const FormGeneralBasis = () => {

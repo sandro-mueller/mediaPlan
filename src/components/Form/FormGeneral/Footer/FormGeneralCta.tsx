@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Box } from '@components/Box';
 import { Button } from '@components/Button';
 import { State } from '@store/interface';
-import { mediaPlanActions } from '@store/module/mediaPlan';
+import { mediaPlanActions } from '@store/feature/mediaPlan';
 
 export const FormGeneralCta = () => {
   const dispatch = useDispatch();

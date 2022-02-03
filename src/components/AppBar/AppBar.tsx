@@ -7,7 +7,7 @@ import { Icon } from '@components/Icon';
 import { Button } from '@components/Button';
 import { showToast } from '@utils/showToast';
 import { State } from '@store/interface';
-import { mediaPlanActions } from '@store/module/mediaPlan';
+import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { useDispatch, useSelector } from 'react-redux';
 
 type Props = {

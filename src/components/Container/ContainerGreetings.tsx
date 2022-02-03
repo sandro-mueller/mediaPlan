@@ -9,7 +9,7 @@ import { Typography } from '@components/Typography';
 import { showToast } from '@utils/showToast';
 import { Baseline } from '@interface/index';
 import { State } from '@store/interface';
-import { mediaPlanActions } from '@store/module/mediaPlan';
+import { mediaPlanActions } from '@store/feature/mediaPlan';
 
 const breakPoints = [768, 1000, 1200];
 

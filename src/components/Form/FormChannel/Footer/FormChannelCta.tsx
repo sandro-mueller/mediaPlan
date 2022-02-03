@@ -5,7 +5,7 @@ import { Box } from '@components/Box';
 import { Button } from '@components/Button';
 import { Baseline } from '@interface/index';
 import { showToast } from '@utils/showToast';
-import { mediaPlanActions } from '@store/module/mediaPlan';
+import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { State } from '@store/interface';
 
 export const FormChannelCta = () => {

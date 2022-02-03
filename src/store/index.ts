@@ -1,5 +1,5 @@
 import logger from 'redux-logger';
-import mediPlanReducer from './module/mediaPlan';
+import mediPlanReducer from './feature/mediaPlan';
 import { mediaPlan } from './preload/mediaPlan';
 import { configureStore } from '@reduxjs/toolkit';
 import { persistMediaPlan } from './persist';
