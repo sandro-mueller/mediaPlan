@@ -1,4 +1,6 @@
-import { RadioType } from './../../../type/index';
+import { RadioType } from '@type/index';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { mediaPlan } from '@store/preload/mediaPlan';
 import {
   ChannelItemKeys,
   ChannelOption,
@@ -6,8 +8,6 @@ import {
   ThemeMode,
   TypeVariants,
 } from '@type/index';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { mediaPlan } from '@store/preload/mediaPlan';
 
 const mediaPlanSlice = createSlice({
   name: 'mediaPlan',
@@ -62,9 +62,7 @@ const mediaPlanSlice = createSlice({
     },
 
     handleChannelOption: (state, { payload }: PayloadAction<ChannelOption>) => {
-      state.channelOptions = JSON.parse(
-        JSON.stringify([...state.channelOptions, payload])
-      );
+      state.channelOptions = [...state.channelOptions, payload];
     },
 
     handleChannelItem: (
@@ -80,13 +78,11 @@ const mediaPlanSlice = createSlice({
       const { name, type, value } = payload;
 
       if (type === 'text') {
-        state.channelItems[name as keyof typeof state.channelItems][type] =
-          value as string;
+        state.channelItems[name][type] = value as string;
       }
 
       if (type === 'radio') {
-        state.channelItems[name as keyof typeof state.channelItems][type] =
-          value as RadioType;
+        state.channelItems[name][type] = value as RadioType;
       }
     },
 
@@ -100,9 +96,8 @@ const mediaPlanSlice = createSlice({
         (channel) => channel.text !== name
       );
 
-      state.channelItems[name as keyof typeof state.channelItems]['text'] = '';
-      state.channelItems[name as keyof typeof state.channelItems]['radio'] =
-        'constant';
+      state.channelItems[name]['text'] = '';
+      state.channelItems[name]['radio'] = 'constant';
     },
 
     handleClearChannel: (state) => {
