@@ -1,4 +1,10 @@
-import { Channels, ThemeMode, TypeVariants } from '@type/index';
+import {
+  Channels,
+  ThemeMode,
+  TypeVariants,
+  RadioType,
+  ChannelOption,
+} from '@type/index';
 
 /**
  * @author Sandro Müller
@@ -36,31 +42,31 @@ export interface MediaPlan {
 
   // CHANNEL
   currentOption: Channels;
-  channelOptions: { id: number; text: Channels }[];
+  channelOptions: ChannelOption[];
   channelItems: {
     SEA: {
       text: string;
-      radio: string;
+      radio: RadioType;
     };
 
     Display: {
       text: string;
-      radio: string;
+      radio: RadioType;
     };
 
     Social: {
       text: string;
-      radio: string;
+      radio: RadioType;
     };
 
     Affiliate: {
       text: string;
-      radio: string;
+      radio: RadioType;
     };
 
     Remarketing: {
       text: string;
-      radio: string;
+      radio: RadioType;
     };
   };
 }

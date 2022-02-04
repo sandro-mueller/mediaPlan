@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from '@components/Box';
 import { useDispatch, useSelector } from 'react-redux';
-import { Channels } from '@type/index';
+import { ChannelItemKeys, Channels, RadioType } from '@type/index';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { State } from '@store/interface';
 import { useTheme } from '@emotion/react';
@@ -22,13 +22,13 @@ export const FormChannelOptions = ({ channelOptions }: Props) => {
   const { baseline }: Baseline = useTheme();
   const { channelItems } = useSelector((state: State) => state.mediaPlan);
 
-  const onHandleChange = (event: React.ChangeEvent<any>) => {
+  const onHandleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, type, value } = event.target;
 
     const payload = {
-      name,
-      type,
-      value,
+      name: name as Channels,
+      type: type as ChannelItemKeys,
+      value: value as RadioType | string,
     };
 
     dispatch(mediaPlanActions.handleChannelItem(payload));

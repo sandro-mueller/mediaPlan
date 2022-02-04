@@ -1,4 +1,6 @@
-export const mediaPlan = {
+import { MediaPlan } from '@store/interface';
+
+export const mediaPlan: MediaPlan = {
   // APP
   mode: 'light',
   openModal: false,
@@ -6,7 +8,7 @@ export const mediaPlan = {
   // GENERAL
   page: 0,
   title: '',
-  type: '',
+  type: 'title',
   startDate: '',
   endDate: '',
   isTitle: false,

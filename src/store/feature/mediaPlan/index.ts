@@ -1,4 +1,11 @@
-import { Channels } from '@type/index';
+import { RadioType } from './../../../type/index';
+import {
+  ChannelItemKeys,
+  ChannelOption,
+  Channels,
+  ThemeMode,
+  TypeVariants,
+} from '@type/index';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { mediaPlan } from '@store/preload/mediaPlan';
 
@@ -6,7 +13,7 @@ const mediaPlanSlice = createSlice({
   name: 'mediaPlan',
   initialState: mediaPlan,
   reducers: {
-    handleMode: (state, { payload }: PayloadAction<string>) => {
+    handleMode: (state, { payload }: PayloadAction<ThemeMode>) => {
       state.mode = payload;
     },
 
@@ -22,7 +29,7 @@ const mediaPlanSlice = createSlice({
       state.title = payload;
     },
 
-    handleType: (state, { payload }: PayloadAction<string>) => {
+    handleType: (state, { payload }: PayloadAction<TypeVariants>) => {
       state.type = payload;
     },
 
@@ -50,14 +57,11 @@ const mediaPlanSlice = createSlice({
       state.isDateError = payload;
     },
 
-    handleCurrentOption: (state, { payload }: PayloadAction<string>) => {
+    handleCurrentOption: (state, { payload }: PayloadAction<Channels>) => {
       state.currentOption = payload;
     },
 
-    handleChannelOption: (
-      state,
-      { payload }: PayloadAction<{ id: number; text: Channels }>
-    ) => {
+    handleChannelOption: (state, { payload }: PayloadAction<ChannelOption>) => {
       state.channelOptions = JSON.parse(
         JSON.stringify([...state.channelOptions, payload])
       );
@@ -69,23 +73,29 @@ const mediaPlanSlice = createSlice({
         payload,
       }: PayloadAction<{
         name: Channels;
-        type: 'text' | 'radio';
-        value: string;
+        type: ChannelItemKeys;
+        value: RadioType | string;
       }>
     ) => {
       const { name, type, value } = payload;
 
-      state.channelItems[name as keyof typeof state.channelItems][type] = value;
+      if (type === 'text') {
+        state.channelItems[name as keyof typeof state.channelItems][type] =
+          value as string;
+      }
+
+      if (type === 'radio') {
+        state.channelItems[name as keyof typeof state.channelItems][type] =
+          value as RadioType;
+      }
     },
 
     handleChanelItemDelete: (
       state,
-      { payload: name }: PayloadAction<string>
+      { payload: name }: PayloadAction<Channels>
     ) => {
-      const channelOptions: { id: number; text: Channels }[] =
-        state.channelOptions;
+      const channelOptions: ChannelOption[] = state.channelOptions;
 
-      //@ts-ignore
       state.channelOptions = channelOptions.filter(
         (channel) => channel.text !== name
       );

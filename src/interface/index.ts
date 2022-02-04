@@ -1,4 +1,4 @@
-// INTERFACES
+// INTERFACE - THEME
 export interface Colors {
   colors: {
     primary: string;

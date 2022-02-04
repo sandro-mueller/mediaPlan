@@ -62,3 +62,21 @@ export type TypeVariants = 'title' | 'startDate' | 'endDate';
  * Used to choose between light and dark mode
  */
 export type ThemeMode = 'light' | 'dark';
+
+/**
+ * Used to determine which value a radio can take
+ */
+export type RadioType = 'constant' | 'exclude';
+
+/**
+ * Available options to select a channel
+ */
+export type ChannelOption = {
+  id: number;
+  text: Channels;
+};
+
+/**
+ * Available keys of a channel item
+ */
+export type ChannelItemKeys = 'text' | 'radio';

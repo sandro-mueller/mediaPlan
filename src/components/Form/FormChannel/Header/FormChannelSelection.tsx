@@ -14,7 +14,7 @@ export const FormChannelSelection = (): JSX.Element => {
 
   const onHandleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
-    dispatch(mediaPlanActions.handleCurrentOption(value));
+    dispatch(mediaPlanActions.handleCurrentOption(value as Channels));
   };
 
   // MAKE SURE FUNCTION IS NOT RUN AGAIN
