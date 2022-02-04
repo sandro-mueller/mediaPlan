@@ -27,48 +27,46 @@ export const Modal = ({ open, content, handleClose }: Props) => {
   const { baseline, colors, zIndex } = useTheme();
 
   return (
-    <>
+    <Box
+      position={'absolute'}
+      top={0}
+      right={0}
+      display={open ? 'flex' : 'none'}
+      justifyContent={'center'}
+      alignItems={'center'}
+      minHeight={'100vh'}
+      width={'100%'}
+      p={`${baseline.b3}px`}
+      zIndex={zIndex.modal}
+    >
       <Box
-        position={'absolute'}
-        top={0}
-        right={0}
-        display={open ? 'flex' : 'none'}
-        justifyContent={'center'}
-        alignItems={'center'}
-        minHeight={'100vh'}
+        height={'100%'}
         width={'100%'}
-        p={`${baseline.b3}px`}
-        zIndex={zIndex.modal}
-      >
-        <Box
-          height={'100%'}
-          width={'100%'}
-          position={'fixed'}
-          top={0}
-          zIndex={-1}
-          bgcolor={colors.text}
-        />
-        <StyledModal>
-          <Box mb={`${baseline.b3}px`}>
-            <Typography variant={'h2'}>Backend</Typography>
-          </Box>
+        position={'fixed'}
+        top={0}
+        zIndex={-1}
+        bgcolor={colors.text}
+      />
+      <StyledModal>
+        <Box mb={`${baseline.b3}px`}>
+          <Typography variant={'h2'}>Backend</Typography>
+        </Box>
 
-          <Box mb={`${baseline.b3}px`}>
-            <Typography variant={'body2'}>{content}</Typography>
-          </Box>
+        <Box mb={`${baseline.b3}px`}>
+          <Typography variant={'body2'}>{content}</Typography>
+        </Box>
 
-          <Box width={'100%'} textAlign={'right'}>
-            <Button
-              variant={'contained'}
-              color={'rgba(0, 0, 0, 0.6)'}
-              size={'small'}
-              handleClick={handleClose}
-            >
-              Close
-            </Button>
-          </Box>
-        </StyledModal>
-      </Box>
-    </>
+        <Box width={'100%'} textAlign={'right'}>
+          <Button
+            variant={'contained'}
+            color={'rgba(0, 0, 0, 0.6)'}
+            size={'small'}
+            handleClick={handleClose}
+          >
+            Close
+          </Button>
+        </Box>
+      </StyledModal>
+    </Box>
   );
 };

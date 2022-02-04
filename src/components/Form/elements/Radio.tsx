@@ -60,18 +60,16 @@ export const Radio = ({
   handleChange,
 }: Props): JSX.Element => {
   return (
-    <>
-      <StyledLabel htmlFor={id}>
-        <StyledRadio
-          id={id}
-          name={name}
-          value={value}
-          type={'radio'}
-          checked={checked}
-          onChange={handleChange}
-        />
-        <StyledRadioReplacement />
-      </StyledLabel>
-    </>
+    <StyledLabel htmlFor={id}>
+      <StyledRadio
+        id={id}
+        name={name}
+        value={value}
+        type={'radio'}
+        checked={checked}
+        onChange={handleChange}
+      />
+      <StyledRadioReplacement />
+    </StyledLabel>
   );
 };

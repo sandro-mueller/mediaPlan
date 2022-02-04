@@ -29,22 +29,18 @@ export const FormChannelSelection = (): JSX.Element => {
   // MAKE SURE COMPONENT DOES NOT RE-RENDER ON OPTION CHANGE
   const filteredOptions = useMemo(() => filteredOption(), [filteredOption]);
 
-  console.log(filteredOptions);
-
   // DELAY DISPATCH
   useEffect(() => {
     dispatch(mediaPlanActions.handleCurrentOption(filteredOptions[0]));
   }, [dispatch, filteredOptions]);
 
   return (
-    <>
-      <Select
-        value={currentOption}
-        options={
-          filteredOptions.length ? filteredOptions : ['- No option left -']
-        }
-        handleChange={onHandleChange}
-      />
-    </>
+    <Select
+      value={currentOption}
+      options={
+        filteredOptions.length ? filteredOptions : ['- No option left -']
+      }
+      handleChange={onHandleChange}
+    />
   );
 };
