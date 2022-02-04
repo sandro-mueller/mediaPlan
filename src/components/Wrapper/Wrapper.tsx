@@ -8,7 +8,7 @@ const StyledWrapper = styled.div((props) => ({
   margin: '0 auto',
 }));
 
-export const Wrapper: React.FC<{ children: any }> = ({
+export const Wrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
 }): JSX.Element => {
   return <StyledWrapper>{children}</StyledWrapper>;
