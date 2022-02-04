@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import facepaint from 'facepaint';
 import lodash from 'lodash';
 import { Property } from 'csstype';
 import { Box } from '@components/Box';
@@ -9,19 +8,14 @@ import { showToast } from '@utils/showToast';
 import { State } from '@store/interface';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { useDispatch, useSelector } from 'react-redux';
+import { createMediaQueries } from '@utils/createMediaQueries';
 
 type Props = {
   backgroundColor?: Property.BackgroundColor;
 };
 
-const breakPoints = [600, 900];
-
-const mediaQuery = facepaint(
-  breakPoints.map((breakpoint) => `@media (min-width: ${breakpoint}px)`)
-);
-
 const StyledAppBar = styled.div<Props>(
-  mediaQuery({ height: [56, 64] }),
+  createMediaQueries(600, 900)({ height: [56, 64] }),
 
   (props) => ({
     padding: `0 ${props.theme.baseline.b3}px`,

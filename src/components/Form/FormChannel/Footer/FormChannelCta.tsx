@@ -8,7 +8,7 @@ import { showToast } from '@utils/showToast';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { State } from '@store/interface';
 
-export const FormChannelCta = () => {
+export const FormChannelCta = (): JSX.Element => {
   const dispatch = useDispatch();
   const { baseline }: Baseline = useTheme();
   const { channelOptions } = useSelector((state: State) => state.mediaPlan);

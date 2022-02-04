@@ -13,6 +13,7 @@ const mediaPlanSlice = createSlice({
   name: 'mediaPlan',
   initialState: mediaPlan,
   reducers: {
+    // APP
     handleMode: (state, { payload }: PayloadAction<ThemeMode>) => {
       state.mode = payload;
     },
@@ -21,6 +22,7 @@ const mediaPlanSlice = createSlice({
       state.openModal = !state.openModal;
     },
 
+    // GENERAL
     handlePage: (state, { payload }: PayloadAction<number>) => {
       state.page = payload;
     },
@@ -57,6 +59,7 @@ const mediaPlanSlice = createSlice({
       state.isDateError = payload;
     },
 
+    // CHANNEL
     handleCurrentOption: (state, { payload }: PayloadAction<Channels>) => {
       state.currentOption = payload;
     },
@@ -98,6 +101,12 @@ const mediaPlanSlice = createSlice({
 
       state.channelItems[name]['text'] = '';
       state.channelItems[name]['radio'] = 'constant';
+    },
+
+    handleClearGeneral: (state) => {
+      state.title = '';
+      state.startDate = '';
+      state.endDate = '';
     },
 
     handleClearChannel: (state) => {

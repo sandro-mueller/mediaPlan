@@ -10,9 +10,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useToggleTheme } from './hooks/useToggleTheme';
 import { Modal } from '@components/Modal';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
+import { useModalContent } from './hooks/useModalContent';
 
-export const App = () => {
+export const App = (): JSX.Element => {
   const { mode, openModal } = useSelector((state: State) => state.mediaPlan);
+  const content = useModalContent();
   const dispatch = useDispatch();
 
   const onHandleClose = () => {
@@ -26,7 +28,7 @@ export const App = () => {
         maxHeight={openModal ? '100vh' : '100%'}
         bgcolor={theme.colors.white}
       >
-        <Modal open={openModal} handleClose={onHandleClose} />
+        <Modal open={openModal} content={content} handleClose={onHandleClose} />
         <AppBar backgroundColor={theme.colors.primary} />
         <Box mt={`${theme.baseline.b4}px`}>
           <Toast />

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import facepaint from 'facepaint';
 import lodash from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTheme } from '@emotion/react';
@@ -10,24 +9,25 @@ import { showToast } from '@utils/showToast';
 import { Baseline } from '@interface/index';
 import { State } from '@store/interface';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
-
-const breakPoints = [768, 1000, 1200];
-
-const mediaQuery = facepaint(
-  breakPoints.map((breakpoint) => `@media (min-width: ${breakpoint}px)`)
-);
+import { createMediaQueries } from '@utils/createMediaQueries';
 
 const StyledContainerGreetings = styled.div(
-  mediaQuery({
+  createMediaQueries(
+    768,
+    1000,
+    1200
+  )({
     width: ['100%', '100%', '50%'],
     textAlign: ['center', 'left', 'left'],
-  }),
-
-  () => ({})
+  })
 );
 
 const StyledBox = styled.div(
-  mediaQuery({
+  createMediaQueries(
+    768,
+    1000,
+    1200
+  )({
     height: [76, 'auto', 'auto'],
     display: 'flex',
     flexDirection: ['column', 'row', 'row'],
@@ -49,9 +49,7 @@ export const ContainerGreetings = (): JSX.Element => {
 
   const onHandleClick = () => {
     if (!page) {
-      dispatch(mediaPlanActions.handleTitle(''));
-      dispatch(mediaPlanActions.handleStartDate(''));
-      dispatch(mediaPlanActions.handleEndDate(''));
+      dispatch(mediaPlanActions.handleClearGeneral());
     }
 
     if (page) {
@@ -61,11 +59,19 @@ export const ContainerGreetings = (): JSX.Element => {
     showToast('Form cleared', 'success');
   };
 
-  const disabled = !page
-    ? !(isTitle || isStartDate || isEndDate)
-    : page
-    ? !channelOptions.length
-    : false;
+  const checkButtonState = () => {
+    if (!page) {
+      return !(isTitle || isStartDate || isEndDate);
+    }
+
+    if (page) {
+      return !channelOptions.length;
+    }
+
+    return false;
+  };
+
+  const disabled = checkButtonState();
 
   return (
     <Box mb={`${baseline.b4}px`}>

@@ -10,7 +10,9 @@ interface Props {
   handleClick: () => void;
 }
 
-export const FormChannelSelectionCta = ({ handleClick }: Props) => {
+export const FormChannelSelectionCta = ({
+  handleClick,
+}: Props): JSX.Element => {
   const { baseline }: Baseline = useTheme();
   const { currentOption } = useSelector((state: State) => state.mediaPlan);
 

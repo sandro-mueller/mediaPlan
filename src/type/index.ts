@@ -33,7 +33,7 @@ export type ButtonVariants = 'outlined' | 'contained';
 export type ButtonSize = 'large' | 'small';
 
 /**
- * Used to check possible options of channels
+ * @description Used to check possible options of channels
  */
 export type ChannelOptions = [
   'SEA',
@@ -44,7 +44,7 @@ export type ChannelOptions = [
 ];
 
 /**
- * Used to check name prop for radio elements
+ * @description Used to check name prop for radio elements
  */
 export type Channels =
   | 'SEA'
@@ -54,22 +54,22 @@ export type Channels =
   | 'Remarketing';
 
 /**
- * Used to check last type display error on either on of the strings below
+ * @description Used to check last type display error on either on of the strings below
  */
 export type TypeVariants = 'title' | 'startDate' | 'endDate';
 
 /**
- * Used to choose between light and dark mode
+ * @description Used to choose between light and dark mode
  */
 export type ThemeMode = 'light' | 'dark';
 
 /**
- * Used to determine which value a radio can take
+ * @description Used to determine which value a radio can take
  */
 export type RadioType = 'constant' | 'exclude';
 
 /**
- * Available options to select a channel
+ * @description Available options to select a channel
  */
 export type ChannelOption = {
   id: number;
@@ -77,6 +77,6 @@ export type ChannelOption = {
 };
 
 /**
- * Available keys of a channel item
+ * @description Available keys of a channel item
  */
 export type ChannelItemKeys = 'text' | 'radio';

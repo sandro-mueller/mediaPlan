@@ -17,7 +17,7 @@ interface Props {
   channelOptions: { id: number; text: Channels }[];
 }
 
-export const FormChannelOptions = ({ channelOptions }: Props) => {
+export const FormChannelOptions = ({ channelOptions }: Props): JSX.Element => {
   const dispatch = useDispatch();
   const { baseline }: Baseline = useTheme();
   const { channelItems } = useSelector((state: State) => state.mediaPlan);
@@ -36,7 +36,7 @@ export const FormChannelOptions = ({ channelOptions }: Props) => {
 
   return (
     <Box mt={`${baseline.b4}px`}>
-      {channelOptions?.map((option: { id: number; text: Channels }) => {
+      {channelOptions.map((option: { id: number; text: Channels }) => {
         return (
           <FormChannelRow
             key={option.id}

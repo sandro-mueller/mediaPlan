@@ -6,7 +6,7 @@ import { State } from '@store/interface';
 import React, { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-export const FormChannelTotal = () => {
+export const FormChannelTotal = (): JSX.Element | null => {
   const { baseline }: Baseline = useTheme();
 
   const { channelOptions, channelItems } = useSelector(

@@ -8,7 +8,7 @@ import { State } from '@store/interface';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { TypeVariants } from '@type/index';
 
-export const FormGeneralBasis = () => {
+export const FormGeneralBasis = (): JSX.Element => {
   const dispatch = useDispatch();
 
   const {

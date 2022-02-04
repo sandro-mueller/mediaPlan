@@ -1,22 +1,19 @@
-import facepaint from 'facepaint';
 import Lottie from 'react-lottie';
 import signin from '@assets/images/MediaPlayer.json';
 import styled from '@emotion/styled';
 import { LOTTIE_OPTIONS } from '@constants/lottie';
+import { createMediaQueries } from '@utils/createMediaQueries';
 
 const options = {
   ...LOTTIE_OPTIONS,
   animationData: signin,
 };
 
-const breakPoints = [1000, 1200];
-
-const mediaQuery = facepaint(
-  breakPoints.map((breakpoint) => `@media (min-width: ${breakpoint}px)`)
-);
-
 const StyledContainerImage = styled.div(
-  mediaQuery({
+  createMediaQueries(
+    1000,
+    1200
+  )({
     position: 'relative',
     display: ['none', 'block'],
     margin: 'auto',

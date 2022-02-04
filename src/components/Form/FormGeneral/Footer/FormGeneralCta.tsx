@@ -4,7 +4,7 @@ import { Button } from '@components/Button';
 import { State } from '@store/interface';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
 
-export const FormGeneralCta = () => {
+export const FormGeneralCta = (): JSX.Element => {
   const dispatch = useDispatch();
   const { isTitle, isStartDate, isEndDate } = useSelector(
     (state: State) => state.mediaPlan

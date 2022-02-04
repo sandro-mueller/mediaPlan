@@ -1,10 +1,10 @@
 import { Box } from '@components/Box';
 import { Radio } from '@components/Form/elements';
-import { Channels } from '@type/index';
+import { Channels, RadioType } from '@type/index';
 
 interface Props {
   name: Channels;
-  value: 'constant' | 'exclude';
+  value: RadioType;
   id: string;
   checked?: boolean;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;

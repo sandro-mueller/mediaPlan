@@ -1,7 +1,7 @@
 import { Typography } from '@components/Typography';
 import { FormChannelRow } from '@components/Form/FormChannel/Grid';
 
-export const FormChannelHeadlines = () => {
+export const FormChannelHeadlines = (): JSX.Element => {
   return (
     <FormChannelRow
       component={[
