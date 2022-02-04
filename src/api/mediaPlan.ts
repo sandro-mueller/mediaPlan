@@ -1,47 +1,18 @@
 import axios, { AxiosResponse } from 'axios';
-import { RadioType } from '@type/index';
+import { MediaPlan } from './interface';
 import { v4 as uuidv4 } from 'uuid';
 
 const api = axios.create({
   baseURL: 'http://localhost:3001/',
 });
 
-interface MediaPlan {
-  title: string;
-  startDate: string;
-  endDate: string;
-  channelItems: {
-    SEA: {
-      text: string;
-      radio: RadioType;
-    };
-
-    Display: {
-      text: string;
-      radio: RadioType;
-    };
-
-    Social: {
-      text: string;
-      radio: RadioType;
-    };
-
-    Affiliate: {
-      text: string;
-      radio: RadioType;
-    };
-
-    Remarketing: {
-      text: string;
-      radio: RadioType;
-    };
-  };
-}
-
-export const createMediaPlan = async (payload: MediaPlan) => {
+export const createMediaPlan = async (
+  payload: MediaPlan
+): Promise<MediaPlan> => {
+  // Simulate backed call
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  const { data }: AxiosResponse = await api.post('/mediaPlan', {
+  const { data }: AxiosResponse<MediaPlan> = await api.post('/mediaPlan', {
     id: uuidv4(),
     ...payload,
   });
@@ -49,10 +20,11 @@ export const createMediaPlan = async (payload: MediaPlan) => {
   return data;
 };
 
-export const copyMediaPlan = async (payload: MediaPlan) => {
+export const copyMediaPlan = async (payload: MediaPlan): Promise<MediaPlan> => {
+  // Simulate backed call
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  const { data }: AxiosResponse = await api.post('/copyPlan', {
+  const { data }: AxiosResponse<MediaPlan> = await api.post('/copyPlan', {
     id: uuidv4(),
     ...payload,
   });
