@@ -80,3 +80,8 @@ export type ChannelOption = {
  * @description Available keys of a channel item
  */
 export type ChannelItemKeys = 'text' | 'radio';
+
+/**
+ * @description Available types for textfield
+ */
+export type InputType = 'text' | 'date';

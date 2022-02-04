@@ -1,10 +1,10 @@
 import styled from '@emotion/styled/macro';
-import { Channels } from '@type/index';
+import { Channels, RadioType } from '@type/index';
 
 interface Props {
   id: string;
   name: Channels;
-  value: 'constant' | 'exclude';
+  value: RadioType;
   checked?: boolean;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }

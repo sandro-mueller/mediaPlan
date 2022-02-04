@@ -1,7 +1,12 @@
 import React from 'react';
 import { Box } from '@components/Box';
 import { useDispatch, useSelector } from 'react-redux';
-import { ChannelItemKeys, Channels, RadioType } from '@type/index';
+import {
+  ChannelItemKeys,
+  ChannelOption,
+  Channels,
+  RadioType,
+} from '@type/index';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { State } from '@store/interface';
 import { useTheme } from '@emotion/react';
@@ -14,7 +19,7 @@ import {
 } from '@components/Form/FormChannel';
 
 interface Props {
-  channelOptions: { id: number; text: Channels }[];
+  channelOptions: ChannelOption[];
 }
 
 export const FormChannelOptions = ({ channelOptions }: Props): JSX.Element => {
