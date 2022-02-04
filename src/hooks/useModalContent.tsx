@@ -1,6 +1,7 @@
 import { State } from '@store/interface';
 import { useSelector } from 'react-redux';
 
+// Demonstration purpose only
 export const useModalContent = () => {
   const { title, startDate, endDate, channelItems } = useSelector(
     (state: State) => state.mediaPlan
@@ -16,6 +17,7 @@ export const useModalContent = () => {
           text: ${
             channelItems.SEA.text.length ? channelItems.SEA.text : 'null'
           },
+          
           radio: '${
             channelItems.SEA.radio.length ? channelItems.SEA.radio : 'null'
           }',
@@ -27,6 +29,7 @@ export const useModalContent = () => {
               ? channelItems.Display.text
               : 'null'
           },
+
           radio: '${
             channelItems.Display.radio.length
               ? channelItems.Display.radio
@@ -38,6 +41,7 @@ export const useModalContent = () => {
           text: ${
             channelItems.Social.text.length ? channelItems.Social.text : 'null'
           },
+
           radio: '${
             channelItems.Social.radio.length
               ? channelItems.Social.radio
@@ -51,6 +55,7 @@ export const useModalContent = () => {
               ? channelItems.Affiliate.text
               : 'null'
           },
+
           radio: '${
             channelItems.Affiliate.radio.length
               ? channelItems.Affiliate.radio
@@ -64,6 +69,7 @@ export const useModalContent = () => {
               ? channelItems.Remarketing.text
               : 'null'
           },
+
           radio: '${
             channelItems.Remarketing.radio.length
               ? channelItems.Remarketing.radio

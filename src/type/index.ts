@@ -72,7 +72,7 @@ export type RadioType = 'constant' | 'exclude';
  * @description Available options to select a channel
  */
 export type ChannelOption = {
-  id: number;
+  id: string;
   text: Channels;
 };
 

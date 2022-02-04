@@ -25,6 +25,7 @@
     "react-scripts": "5.0.0",
     "redux-persist": "^6.0.0",
     "typescript": "^4.4.2",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -56,6 +57,7 @@
     "@types/lodash": "^4.14.178",
     "@types/react-lottie": "^1.2.6",
     "@types/redux-logger": "^3.0.9",
+    "@types/uuid": "^8.3.4",
     "craco-alias": "^3.0.1",
     "redux-logger": "^3.0.6"
   }

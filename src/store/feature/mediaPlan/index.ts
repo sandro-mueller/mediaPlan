@@ -1,6 +1,7 @@
 import { RadioType } from '@type/index';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { mediaPlan } from '@store/preload/mediaPlan';
+import { v4 as uuidv4 } from 'uuid';
 import {
   ChannelItemKeys,
   ChannelOption,
@@ -64,8 +65,17 @@ const mediaPlanSlice = createSlice({
       state.currentOption = payload;
     },
 
-    handleChannelOption: (state, { payload }: PayloadAction<ChannelOption>) => {
-      state.channelOptions = [...state.channelOptions, payload];
+    handleChannelOption: {
+      reducer: (state, { payload }: PayloadAction<ChannelOption>) => {
+        state.channelOptions = [...state.channelOptions, payload];
+      },
+
+      prepare: ({ text }: { text: Channels }) => ({
+        payload: {
+          id: uuidv4(),
+          text,
+        },
+      }),
     },
 
     handleChannelItem: (

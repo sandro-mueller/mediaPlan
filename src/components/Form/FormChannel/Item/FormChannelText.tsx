@@ -1,3 +1,4 @@
+import React from 'react';
 import { Box } from '@components/Box';
 import { Icon } from '@components/Icon';
 import { Typography } from '@components/Typography';
@@ -6,7 +7,6 @@ import { Baseline } from '@interface/index';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { Channels } from '@type/index';
 import { showToast } from '@utils/showToast';
-import React from 'react';
 import { useDispatch } from 'react-redux';
 
 interface Props {

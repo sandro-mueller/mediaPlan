@@ -19,6 +19,7 @@ const StyledButton = styled.button<Props>(
     borderRadius: 2,
     cursor: 'pointer',
   },
+
   (props) => ({
     height: props.size === 'large' ? 42 : 36,
     width: props.fullWidth ? '100%' : props.width ? props.width : 'auto',

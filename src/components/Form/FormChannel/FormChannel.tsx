@@ -21,12 +21,7 @@ export const FormChannel = (): JSX.Element => {
   );
 
   const onHandleClick = () => {
-    const payload = {
-      id: Math.random(),
-      text: currentOption,
-    };
-
-    dispatch(mediaPlanActions.handleChannelOption(payload));
+    dispatch(mediaPlanActions.handleChannelOption({ text: currentOption }));
 
     showToast(`${currentOption} added`);
   };
