@@ -1,0 +1,59 @@
+{
+  "mediaPlan": {
+    "id": "ae15d5a9-0cf5-4b31-be2f-f1fe7785d71d",
+    "title": "My Media Plan",
+    "startDate": "2022-01-01",
+    "endDate": "2022-01-01",
+    "channelItems": {
+      "SEA": {
+        "text": "",
+        "radio": "constant"
+      },
+      "Display": {
+        "text": "255",
+        "radio": "constant"
+      },
+      "Social": {
+        "text": "",
+        "radio": "constant"
+      },
+      "Affiliate": {
+        "text": "",
+        "radio": "constant"
+      },
+      "Remarketing": {
+        "text": "",
+        "radio": "constant"
+      }
+    }
+  },
+
+  "copyPlan": {
+    "id": "842f74ce-0146-4977-90ef-df53afb0ce25",
+    "title": "My Media Plan",
+    "startDate": "2022-01-01",
+    "endDate": "2022-01-01",
+    "channelItems": {
+      "SEA": {
+        "text": "",
+        "radio": "constant"
+      },
+      "Display": {
+        "text": "255",
+        "radio": "constant"
+      },
+      "Social": {
+        "text": "",
+        "radio": "constant"
+      },
+      "Affiliate": {
+        "text": "",
+        "radio": "constant"
+      },
+      "Remarketing": {
+        "text": "",
+        "radio": "constant"
+      }
+    }
+  }
+}

@@ -4,29 +4,43 @@ import { useTheme } from '@emotion/react';
 import { Box } from '@components/Box';
 import { Button } from '@components/Button';
 import { Baseline } from '@interface/index';
-import { showToast } from '@utils/showToast';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { State } from '@store/interface';
+import { useCopyMediaPlan, useCreateMediaPlan } from '@api/hooks/mediaPlan';
 
 export const FormChannelCta = (): JSX.Element => {
   const dispatch = useDispatch();
+  const { mutate: createMediaPlan } = useCreateMediaPlan();
+  const { mutate: copyMediaPlan } = useCopyMediaPlan();
+
   const { baseline }: Baseline = useTheme();
   const { channelOptions } = useSelector((state: State) => state.mediaPlan);
+  const { title, startDate, endDate, channelItems } = useSelector(
+    (state: State) => state.mediaPlan
+  );
 
   const onHandlePage = (page: number) => {
     dispatch(mediaPlanActions.handlePage(page));
   };
 
   const onHandleCopy = () => {
-    window.scrollTo(0, 0);
-    dispatch(mediaPlanActions.handleModal());
-    showToast('Plan copied', 'success');
+    // API CALL
+    copyMediaPlan({
+      title,
+      startDate,
+      endDate,
+      channelItems,
+    });
   };
 
   const onHandleSave = () => {
-    window.scrollTo(0, 0);
-    dispatch(mediaPlanActions.handleModal());
-    showToast('Plan saved', 'success');
+    // API CALL
+    createMediaPlan({
+      title,
+      startDate,
+      endDate,
+      channelItems,
+    });
   };
 
   return (

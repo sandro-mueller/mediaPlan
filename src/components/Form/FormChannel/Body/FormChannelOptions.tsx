@@ -41,7 +41,7 @@ export const FormChannelOptions = ({ channelOptions }: Props): JSX.Element => {
 
   return (
     <Box mt={`${baseline.b4}px`}>
-      {channelOptions.map((option: { id: string; text: Channels }) => {
+      {channelOptions.map((option: ChannelOption) => {
         return (
           <FormChannelRow
             key={option.id}

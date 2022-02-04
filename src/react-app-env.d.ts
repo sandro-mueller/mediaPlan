@@ -10,6 +10,7 @@ declare module '@interface';
 declare module '@type';
 declare module '@utils';
 declare module '@store';
+declare module '@api';
 
 declare module '@emotion/react' {
   export interface Theme {
