@@ -9,15 +9,15 @@ export const useCreateMediaPlan = () => {
 
   return useMutation(createMediaPlan, {
     onMutate: () => {
-      showToast('Request sent');
+      showToast('requestSent');
     },
 
     onError: () => {
-      showToast('Request failed', 'error');
+      showToast('requestFailed', 'error');
     },
 
     onSuccess: () => {
-      showToast('Plan saved', 'success');
+      showToast('planSaved', 'success');
     },
 
     onSettled: () => {
@@ -32,15 +32,15 @@ export const useCopyMediaPlan = () => {
 
   return useMutation(copyMediaPlan, {
     onMutate: () => {
-      showToast('Request sent');
+      showToast('requestSent');
     },
 
     onError: () => {
-      showToast('Request failed', 'error');
+      showToast('requestFailed', 'error');
     },
 
     onSuccess: () => {
-      showToast('Plan copied', 'success');
+      showToast('planCopied', 'success');
     },
 
     onSettled: () => {

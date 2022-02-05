@@ -56,7 +56,7 @@ export const ContainerGreetings = (): JSX.Element => {
       dispatch(mediaPlanActions.handleClearChannel());
     }
 
-    showToast('Form cleared', 'success');
+    showToast('formCleared', 'success');
   };
 
   const checkButtonState = () => {

@@ -15,7 +15,7 @@ i18n
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
-    ns: ['translation', 'success', 'errors'],
+    ns: ['translation', 'success', 'info', 'error'],
     defaultNS: 'translation',
     supportedLngs: ['de', 'en'],
     fallbackLng: {

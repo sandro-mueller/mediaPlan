@@ -2,5 +2,10 @@
  * Critical CSS
  */
 export const SuspenseLoader = (): JSX.Element => {
-  return <div style={{ fontFamily: 'Arial', padding: 8 }}>Please wait...</div>;
+  const language = window.localStorage.getItem('lang');
+  return (
+    <div style={{ fontFamily: 'Arial', padding: 8 }}>
+      {language === 'en' ? 'Please wait...' : 'Bitte warten...'}
+    </div>
+  );
 };

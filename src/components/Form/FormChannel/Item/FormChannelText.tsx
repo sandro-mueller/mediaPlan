@@ -8,6 +8,7 @@ import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { Channels } from '@type/index';
 import { showToast } from '@utils/showToast';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   text: Channels;
@@ -15,13 +16,17 @@ interface Props {
 
 export const FormChannelText = ({ text }: Props) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { baseline }: Baseline = useTheme();
 
   const onHandleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const { id } = event.target as HTMLDivElement;
 
     dispatch(mediaPlanActions.handleChanelItemDelete(id as Channels));
-    showToast(`${id} deleted`, 'error');
+
+    const title = t('channelDeleted', { channel: id, ns: 'error' });
+
+    showToast(title, 'error');
   };
 
   return (

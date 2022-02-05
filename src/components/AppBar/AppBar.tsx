@@ -38,7 +38,7 @@ export const AppBar = ({ backgroundColor }: Props): JSX.Element => {
         break;
     }
 
-    showToast('Theme changed');
+    showToast('themeChanged');
   };
 
   return (

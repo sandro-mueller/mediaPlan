@@ -21,7 +21,7 @@ export const AppBarLanguage = (): JSX.Element => {
     const updateLanguage: LanguageType = language === 'en' ? 'de' : 'en';
     dispatch(mediaPlanActions.handleLanguage(updateLanguage));
 
-    showToast('Changed language');
+    showToast('languageChanged');
   };
 
   useEffect(() => {

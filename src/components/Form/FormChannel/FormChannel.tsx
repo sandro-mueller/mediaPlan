@@ -12,9 +12,11 @@ import { Typography } from '@components/Typography';
 import { useTheme } from '@emotion/react';
 import { Baseline } from '@interface/index';
 import { FormChannelTotal } from './Body';
+import { useTranslation } from 'react-i18next';
 
 export const FormChannel = (): JSX.Element => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { baseline }: Baseline = useTheme();
   const { currentOption, channelOptions } = useSelector(
     (state: State) => state.mediaPlan
@@ -23,7 +25,8 @@ export const FormChannel = (): JSX.Element => {
   const onHandleClick = () => {
     dispatch(mediaPlanActions.handleChannelOption({ text: currentOption }));
 
-    showToast(`${currentOption} added`);
+    const title = t('channelAdded', { channel: currentOption, ns: 'info' });
+    showToast(title);
   };
 
   return (

@@ -1,0 +1,6 @@
+{
+  "requestSent": "Anfrage gesendet",
+  "themeChanged": "Theme gewechselt",
+  "languageChanged": "Sprache gewechselt",
+  "channelAdded": "{{ channel }} hinzugefügt"
+}
