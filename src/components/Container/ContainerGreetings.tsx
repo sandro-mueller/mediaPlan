@@ -10,11 +10,12 @@ import { Baseline } from '@interface/index';
 import { State } from '@store/interface';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { createMediaQueries } from '@utils/createMediaQueries';
+import { useTranslation } from 'react-i18next';
 
 const StyledContainerGreetings = styled.div(
   createMediaQueries(
     768,
-    1000,
+    1060,
     1200
   )({
     width: ['100%', '100%', '50%'],
@@ -25,7 +26,7 @@ const StyledContainerGreetings = styled.div(
 const StyledBox = styled.div(
   createMediaQueries(
     768,
-    1000,
+    1060,
     1200
   )({
     height: [76, 'auto', 'auto'],
@@ -42,6 +43,7 @@ const StyledBox = styled.div(
 
 export const ContainerGreetings = (): JSX.Element => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { baseline }: Baseline = useTheme();
   const { page, isTitle, isStartDate, isEndDate, channelOptions } = useSelector(
     (state: State) => state.mediaPlan
@@ -76,12 +78,10 @@ export const ContainerGreetings = (): JSX.Element => {
   return (
     <Box mb={`${baseline.b4}px`}>
       <StyledContainerGreetings>
-        <Typography variant={'h1'}>Create a media plan</Typography>
+        <Typography variant={'h1'}>{t('headline')}</Typography>
 
         <StyledBox>
-          <Typography variant={'body1'}>
-            Fill in the form to calculate the budget
-          </Typography>
+          <Typography variant={'body1'}>{t('tagline')}</Typography>
 
           <Button
             variant={'outlined'}
@@ -90,7 +90,7 @@ export const ContainerGreetings = (): JSX.Element => {
             disabled={disabled}
             handleClick={lodash.throttle(onHandleClick, 3000)}
           >
-            Clear Form
+            {t('button.clearForm')}
           </Button>
         </StyledBox>
       </StyledContainerGreetings>

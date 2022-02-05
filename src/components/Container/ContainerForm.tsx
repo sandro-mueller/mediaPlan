@@ -6,7 +6,7 @@ import { FormGeneral } from '@components/Form/FormGeneral';
 import { createMediaQueries } from '@utils/createMediaQueries';
 
 const StyledContainerForm = styled.div(
-  createMediaQueries(1000, 1200)({ width: ['100%', '50%'] })
+  createMediaQueries(1060, 1200)({ width: ['100%', '50%'] })
 );
 
 export const ContainerForm = (): JSX.Element => {

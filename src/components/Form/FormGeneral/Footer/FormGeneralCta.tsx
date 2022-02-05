@@ -3,9 +3,11 @@ import { Box } from '@components/Box';
 import { Button } from '@components/Button';
 import { State } from '@store/interface';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
+import { useTranslation } from 'react-i18next';
 
 export const FormGeneralCta = (): JSX.Element => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { isTitle, isStartDate, isEndDate } = useSelector(
     (state: State) => state.mediaPlan
   );
@@ -25,7 +27,7 @@ export const FormGeneralCta = (): JSX.Element => {
         disabled={!(isTitle && isStartDate && isEndDate)}
         handleClick={() => onHandlePage(1)}
       >
-        Step 2 of 2
+        {t('button.continue')}
       </Button>
     </>
   );

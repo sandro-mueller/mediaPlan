@@ -11,7 +11,7 @@ const options = {
 
 const StyledContainerImage = styled.div(
   createMediaQueries(
-    1000,
+    1060,
     1200
   )({
     position: 'relative',

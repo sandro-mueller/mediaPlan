@@ -11,6 +11,8 @@ import { useToggleTheme } from './hooks/useToggleTheme';
 import { Modal } from '@components/Modal';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { useModalContent } from './hooks/useModalContent';
+import { Suspense } from 'react';
+import { SuspenseLoader } from '@components/Suspense';
 
 export const App = (): JSX.Element => {
   const { mode, openModal } = useSelector((state: State) => state.mediaPlan);
@@ -22,22 +24,28 @@ export const App = (): JSX.Element => {
   };
 
   return (
-    <ThemeProvider theme={useToggleTheme(mode)}>
-      <Box
-        minHeight={'100vh'}
-        maxHeight={openModal ? '100vh' : '100%'}
-        bgcolor={theme.colors.white}
-      >
-        <Modal open={openModal} content={content} handleClose={onHandleClose} />
-        <AppBar backgroundColor={theme.colors.primary} />
-        <Box mt={`${theme.baseline.b4}px`}>
-          <Toast />
+    <Suspense fallback={<SuspenseLoader />}>
+      <ThemeProvider theme={useToggleTheme(mode)}>
+        <Box
+          minHeight={'100vh'}
+          maxHeight={openModal ? '100vh' : '100%'}
+          bgcolor={theme.colors.white}
+        >
+          <Modal
+            open={openModal}
+            content={content}
+            handleClose={onHandleClose}
+          />
+          <AppBar backgroundColor={theme.colors.primary} />
+          <Box mt={`${theme.baseline.b4}px`}>
+            <Toast />
+          </Box>
+          <Wrapper>
+            <Container />
+          </Wrapper>
         </Box>
-        <Wrapper>
-          <Container />
-        </Wrapper>
-      </Box>
-    </ThemeProvider>
+      </ThemeProvider>
+    </Suspense>
   );
 };
 

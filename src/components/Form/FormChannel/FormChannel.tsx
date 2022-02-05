@@ -12,9 +12,11 @@ import { Typography } from '@components/Typography';
 import { useTheme } from '@emotion/react';
 import { Baseline } from '@interface/index';
 import { FormChannelTotal } from './Body';
+import { useTranslation } from 'react-i18next';
 
 export const FormChannel = (): JSX.Element => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { baseline }: Baseline = useTheme();
   const { currentOption, channelOptions } = useSelector(
     (state: State) => state.mediaPlan
@@ -39,7 +41,7 @@ export const FormChannel = (): JSX.Element => {
           mt={`${baseline.b4}px`}
           mb={`${baseline.b4}px`}
         >
-          <Typography variant={'body2'}>- No option added -</Typography>
+          <Typography variant={'body2'}>{t('channelBody.noOption')}</Typography>
         </Box>
       )}
 

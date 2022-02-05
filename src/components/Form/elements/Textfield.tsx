@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import { Box } from '@components/Box';
 import { LOTTIE_OPTIONS } from '@constants/lottie';
 import { Channels, InputType } from '@type/index';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   isError: boolean;
@@ -102,6 +103,8 @@ export const Textfield = ({
   width = '100%',
   handleChange,
 }: TextfieldProps): JSX.Element => {
+  const { t } = useTranslation();
+
   return (
     <Box position={'relative'} width={width}>
       <StyledTextfield
@@ -123,7 +126,7 @@ export const Textfield = ({
 
       <StyledHelperText isError={isError}>
         <Box display={'flex'} justifyContent={'space-between'}>
-          {helperText}
+          {t(`${helperText}`)}
           <Box>{isCounter && `(${value.length} / 32)`}</Box>
         </Box>
       </StyledHelperText>

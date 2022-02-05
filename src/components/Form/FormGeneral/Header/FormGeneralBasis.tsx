@@ -73,7 +73,7 @@ export const FormGeneralBasis = (): JSX.Element => {
       <Textfield
         value={title}
         isValue={isTitle}
-        helperText={'Enter max. 32 characters'}
+        helperText={'helperText.characterMax'}
         placeholder={'Title'}
         isCounter
         handleChange={(event) => onHandleChange(event, 'title')}
@@ -87,7 +87,7 @@ export const FormGeneralBasis = (): JSX.Element => {
           helperText={
             isDateError && type === 'startDate'
               ? 'Start date cannot start later'
-              : 'Enter starting date'
+              : 'helperText.startDate'
           }
           isError={isDateError && type === 'startDate'}
           width={`calc(50% - ${baseline.b2}px)`}
@@ -101,7 +101,7 @@ export const FormGeneralBasis = (): JSX.Element => {
           helperText={
             isDateError && type === 'endDate'
               ? 'Finish date cannot start earlier'
-              : 'Enter finish date'
+              : 'helperText.finishDate'
           }
           isError={isDateError && type === 'endDate'}
           width={`calc(50% - ${baseline.b2}px)`}

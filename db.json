@@ -1,9 +1,9 @@
 {
   "mediaPlan": {
-    "id": "77d903ea-b02e-4062-98ce-e9c1e7f69903",
-    "title": "My Media Plan",
+    "id": "926546a5-c5cd-45d7-b48a-e6814fac9a12",
+    "title": "test",
     "startDate": "2022-01-01",
-    "endDate": "2022-01-01",
+    "endDate": "2023-01-01",
     "channelItems": {
       "SEA": {
         "text": "",
@@ -28,10 +28,10 @@
     }
   },
   "copyPlan": {
-    "id": "283c494e-979f-480b-9ebe-dd377e97f174",
-    "title": "My Media Plan",
+    "id": "b2e0205a-b2ff-4629-b1f1-737ec9ae768a",
+    "title": "g",
     "startDate": "2022-01-01",
-    "endDate": "2022-01-01",
+    "endDate": "2023-01-01",
     "channelItems": {
       "SEA": {
         "text": "",

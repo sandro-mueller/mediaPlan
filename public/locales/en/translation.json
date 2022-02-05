@@ -1,0 +1,41 @@
+{
+  "headline": "Create a media plan",
+  "tagline": "Fill in the form to caluclate the budget",
+  "suspense": "Please wait...",
+
+  "button": {
+    "back": "Back",
+    "continue": "Step 2 of 2",
+    "darkMode": "Dark mode",
+    "clearForm": "Clear form",
+    "copyPlan": "Copy plan",
+    "savePlan": "Save plan"
+  },
+
+  "select": {
+    "sea": "SEA",
+    "display": "Display",
+    "social": "Social",
+    "affiliate": "Affiliate",
+    "remarketing": "Remarketing"
+  },
+
+  "placeholder": {
+    "title": "Title"
+  },
+
+  "helperText": {
+    "characterMax": "Enter max. 32 characters",
+    "startDate": "Enter starting date",
+    "finishDate": "Enter finish date"
+  },
+
+  "channelBody": {
+    "channel": "Channel",
+    "budget": "Budget",
+    "constant": "Constant",
+    "exclude": "Exclude",
+    "cta": "Add selected option to budget:",
+    "noOption": "- No option added -"
+  }
+}

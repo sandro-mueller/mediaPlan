@@ -11,6 +11,7 @@ declare module '@type';
 declare module '@utils';
 declare module '@store';
 declare module '@api';
+declare module '@i18n';
 
 declare module '@emotion/react' {
   export interface Theme {
