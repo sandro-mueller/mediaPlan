@@ -35,9 +35,7 @@ export const FormChannelSelectionCta = ({
           <Icon type={'addCircle'} />
         </Box>
 
-        <Typography variant={'body1'}>
-          Add selected option to budget:
-        </Typography>
+        <Typography variant={'body1'}>{'channelBody.cta'}</Typography>
 
         <Typography variant={'body1'} color={'#7bc67e'}>
           {` ${currentOption}`}

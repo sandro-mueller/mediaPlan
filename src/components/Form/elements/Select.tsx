@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Box } from '@components/Box';
 import { Icon } from '@components/Icon';
 import { Channels } from '@type/index';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   value: Channels;
@@ -44,6 +45,8 @@ export const StyledSelect = styled.select<SelectProps>(
 );
 
 export const Select = ({ value, options, handleChange }: Props) => {
+  const { t } = useTranslation();
+
   return (
     <Box position={'relative'}>
       <Box
@@ -56,7 +59,7 @@ export const Select = ({ value, options, handleChange }: Props) => {
       </Box>
       <StyledSelect value={value} onChange={handleChange}>
         {options.map((option: string) => {
-          return <option key={option}>{option}</option>;
+          return <option key={option}>{t(option)}</option>;
         })}
       </StyledSelect>
     </Box>

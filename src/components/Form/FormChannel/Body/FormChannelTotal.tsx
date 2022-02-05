@@ -34,8 +34,9 @@ export const FormChannelTotal = (): JSX.Element | null => {
   }
 
   return (
-    <Box mt={`${baseline.b3}px`} mb={`${baseline.b3}px`}>
-      <Typography variant={'h2'}>{`Total: $${total}`}</Typography>
+    <Box display={'flex'} mt={`${baseline.b3}px`} mb={`${baseline.b3}px`}>
+      <Typography variant={'h2'}>{'channelBody.total'}</Typography>
+      <Typography variant={'h2'}>{`${total}`}</Typography>
     </Box>
   );
 };

@@ -98,7 +98,7 @@ export const Textfield = ({
   value,
   isValue = false,
   helperText,
-  placeholder,
+  placeholder = '',
   isCounter = false,
   width = '100%',
   handleChange,
@@ -109,7 +109,7 @@ export const Textfield = ({
     <Box position={'relative'} width={width}>
       <StyledTextfield
         name={name}
-        placeholder={placeholder}
+        placeholder={t(placeholder)}
         maxLength={32}
         isError={isError}
         value={value}

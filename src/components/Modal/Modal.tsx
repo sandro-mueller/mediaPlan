@@ -63,7 +63,7 @@ export const Modal = ({ open, content, handleClose }: Props) => {
             size={'small'}
             handleClick={handleClose}
           >
-            Close
+            button.close
           </Button>
         </Box>
       </StyledModal>

@@ -37,9 +37,7 @@ export const FormChannelSelection = (): JSX.Element => {
   return (
     <Select
       value={currentOption}
-      options={
-        filteredOptions.length ? filteredOptions : ['- No option left -']
-      }
+      options={filteredOptions.length ? filteredOptions : ['select.noOption']}
       handleChange={onHandleChange}
     />
   );

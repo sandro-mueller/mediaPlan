@@ -9,7 +9,8 @@
     "darkMode": "Dark mode",
     "clearForm": "Clear form",
     "copyPlan": "Copy plan",
-    "savePlan": "Save plan"
+    "savePlan": "Save plan",
+    "close": "Schließen"
   },
 
   "select": {
@@ -36,6 +37,7 @@
     "constant": "Constant",
     "exclude": "Exclude",
     "cta": "Add selected option to budget:",
-    "noOption": "- No option added -"
+    "noOption": "- No option added -",
+    "total": "Total: $"
   }
 }

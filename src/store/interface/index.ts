@@ -4,6 +4,7 @@ import {
   TypeVariants,
   RadioType,
   ChannelOption,
+  LanguageType,
 } from '@type/index';
 
 /**
@@ -22,12 +23,14 @@ import {
  * @currentOption Selected option to calculate budget
  * @channelOptions Array to render channel items for DOM
  * @channelItems Object to keep track of entered values for channel items
+ * @language Determines app language
  */
 
 export interface MediaPlan {
   // APP
   mode: ThemeMode;
   openModal: boolean;
+  language: LanguageType;
 
   // GENERAL
   page: number;

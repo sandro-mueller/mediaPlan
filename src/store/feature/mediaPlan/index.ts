@@ -1,3 +1,4 @@
+import { LanguageType } from './../../../type/index';
 import { RadioType } from '@type/index';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { mediaPlan } from '@store/preload/mediaPlan';
@@ -21,6 +22,10 @@ const mediaPlanSlice = createSlice({
 
     handleModal: (state) => {
       state.openModal = !state.openModal;
+    },
+
+    handleLanguage: (state, { payload }: PayloadAction<LanguageType>) => {
+      state.language = payload;
     },
 
     // GENERAL

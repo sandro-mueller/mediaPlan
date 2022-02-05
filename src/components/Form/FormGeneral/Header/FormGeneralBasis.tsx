@@ -74,7 +74,7 @@ export const FormGeneralBasis = (): JSX.Element => {
         value={title}
         isValue={isTitle}
         helperText={'helperText.characterMax'}
-        placeholder={'Title'}
+        placeholder={'placeholder.title'}
         isCounter
         handleChange={(event) => onHandleChange(event, 'title')}
       />

@@ -4,38 +4,41 @@
   "suspense": "Please wait...",
 
   "button": {
-    "back": "Back",
-    "continue": "Step 2 of 2",
+    "back": "Zurück",
+    "continue": "Schritt 2 von 2",
     "darkMode": "Dark mode",
-    "clearForm": "Clear form",
-    "copyPlan": "Copy plan",
-    "savePlan": "Save plan"
+    "clearForm": "Zurücksetzen",
+    "copyPlan": "Plan kopieren",
+    "savePlan": "Plan sichern",
+    "close": "Schließen"
   },
 
   "select": {
     "sea": "SEA",
-    "display": "Display",
-    "social": "Social",
+    "display": "Bildschirm",
+    "social": "Sozial",
     "affiliate": "Affiliate",
-    "remarketing": "Remarketing"
+    "remarketing": "Wiedervermarktung",
+    "noOption": "- Keine Option verfügbar -"
   },
 
   "placeholder": {
-    "title": "Title"
+    "title": "Titel"
   },
 
   "helperText": {
-    "characterMax": "Enter max. 32 characters",
-    "startDate": "Enter starting date",
-    "finishDate": "Enter finish date"
+    "characterMax": "Maximal 32 Zeichen",
+    "startDate": "Startdatum eingeben",
+    "finishDate": "Enddatum eingeben"
   },
 
   "channelBody": {
-    "channel": "Channel",
+    "channel": "Kanal",
     "budget": "Budget",
-    "constant": "Constant",
-    "exclude": "Exclude",
-    "cta": "Add selected option to budget:",
-    "noOption": "- No option added -"
+    "constant": "Konstant",
+    "exclude": "Ausschließen",
+    "cta": "Auswahl zum Budget hinzufügen:",
+    "noOption": "- Keine Option hinzugefügt -",
+    "total": "Gesamt: $"
   }
 }

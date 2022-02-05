@@ -8,7 +8,9 @@ interface Props {
     | 'expandLess'
     | 'expandMore'
     | 'addCircle'
-    | 'removeCircle';
+    | 'removeCircle'
+    | 'germanFlag'
+    | 'englishFlag';
 }
 
 export const Icon = ({ type }: Props): JSX.Element => {
@@ -124,6 +126,7 @@ export const Icon = ({ type }: Props): JSX.Element => {
         </svg>
       )}
 
+      {/* RemoveCircle */}
       {type === 'removeCircle' && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -135,6 +138,26 @@ export const Icon = ({ type }: Props): JSX.Element => {
         >
           <path d="M0 0h24v24H0z" fill="none" />
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11H7v-2h10v2z" />
+        </svg>
+      )}
+
+      {/* GermanFlag */}
+      {type === 'germanFlag' && (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3">
+          <path d="M0 0h5v3H0z" />
+          <path fill="#D00" d="M0 1h5v2H0z" />
+          <path fill="#FFCE00" d="M0 2h5v1H0z" />
+        </svg>
+      )}
+
+      {/* EnglishFlag */}
+      {type === 'englishFlag' && (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 15">
+          <path fill="#FFF" d="M0 0h25v15H0z" />
+          <g fill="#CE1124">
+            <path d="M11 0h3v15h-3z" />
+            <path d="M0 6h25v3H0z" />
+          </g>
         </svg>
       )}
     </>

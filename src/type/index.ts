@@ -85,3 +85,8 @@ export type ChannelItemKeys = 'text' | 'radio';
  * @description Available types for textfield
  */
 export type InputType = 'text' | 'date';
+
+/**
+ * @description Available types for language
+ */
+export type LanguageType = 'de' | 'en';
