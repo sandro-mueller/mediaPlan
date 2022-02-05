@@ -46,6 +46,7 @@ export const Modal = ({ open, content, handleClose }: Props) => {
         top={0}
         zIndex={-1}
         bgcolor={colors.text}
+        onClick={handleClose}
       />
       <StyledModal>
         <Box mb={`${baseline.b3}px`}>
