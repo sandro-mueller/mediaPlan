@@ -10,7 +10,6 @@ import { Baseline } from '@interface/index';
 import { State } from '@store/interface';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { createMediaQueries } from '@utils/createMediaQueries';
-import { useTranslation } from 'react-i18next';
 
 const StyledContainerGreetings = styled.div(
   createMediaQueries(
@@ -43,7 +42,6 @@ const StyledBox = styled.div(
 
 export const ContainerGreetings = (): JSX.Element => {
   const dispatch = useDispatch();
-  const { t } = useTranslation();
   const { baseline }: Baseline = useTheme();
   const { page, isTitle, isStartDate, isEndDate, channelOptions } = useSelector(
     (state: State) => state.mediaPlan
@@ -78,10 +76,12 @@ export const ContainerGreetings = (): JSX.Element => {
   return (
     <Box mb={`${baseline.b4}px`}>
       <StyledContainerGreetings>
-        <Typography variant={'h1'}>{t('headline')}</Typography>
+        <Box mb={`${baseline.b1}px`}>
+          <Typography variant={'h1'}>{'headline'}</Typography>
+        </Box>
 
         <StyledBox>
-          <Typography variant={'body1'}>{t('tagline')}</Typography>
+          <Typography variant={'body1'}>{'tagline'}</Typography>
 
           <Button
             variant={'outlined'}
@@ -90,7 +90,7 @@ export const ContainerGreetings = (): JSX.Element => {
             disabled={disabled}
             handleClick={lodash.throttle(onHandleClick, 3000)}
           >
-            {t('button.clearForm')}
+            {'button.clearForm'}
           </Button>
         </StyledBox>
       </StyledContainerGreetings>

@@ -7,11 +7,9 @@ import { Baseline } from '@interface/index';
 import { mediaPlanActions } from '@store/feature/mediaPlan';
 import { State } from '@store/interface';
 import { useCopyMediaPlan, useCreateMediaPlan } from '@api/hooks/mediaPlan';
-import { useTranslation } from 'react-i18next';
 
 export const FormChannelCta = (): JSX.Element => {
   const dispatch = useDispatch();
-  const { t } = useTranslation();
   const { mutate: createMediaPlan } = useCreateMediaPlan();
   const { mutate: copyMediaPlan } = useCopyMediaPlan();
 
@@ -60,7 +58,7 @@ export const FormChannelCta = (): JSX.Element => {
           width={`calc(50% - ${baseline.b2}px)`}
           handleClick={() => onHandlePage(0)}
         >
-          {t('button.back')}
+          {'button.back'}
         </Button>
 
         <Button
@@ -71,7 +69,7 @@ export const FormChannelCta = (): JSX.Element => {
           disabled={!channelOptions.length}
           handleClick={lodash.throttle(onHandleCopy, 3000)}
         >
-          {t('button.copyPlan')}
+          {'button.copyPlan'}
         </Button>
       </Box>
 
@@ -83,7 +81,7 @@ export const FormChannelCta = (): JSX.Element => {
         disabled={!channelOptions.length}
         handleClick={lodash.throttle(onHandleSave, 3000)}
       >
-        {t('button.savePlan')}
+        {'button.savePlan'}
       </Button>
     </>
   );

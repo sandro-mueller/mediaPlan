@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 import { ColorsVariants, TypographyVariants } from '@type/index';
+import { useTranslation } from 'react-i18next';
 import { typography } from './TypographyVariants';
 
 interface Props {
   variant: TypographyVariants;
   color?: ColorsVariants;
+  children?: string | React.ReactNode;
 }
 
 //@ts-ignore - Note: emotion does not know css property 'textTransform'
@@ -24,13 +26,16 @@ const StyledTypography = styled.div<Props>(
   })
 );
 
-export const Typography: React.FC<{
-  variant: TypographyVariants;
-  color?: ColorsVariants;
-}> = ({ variant, color, children }): JSX.Element => {
+export const Typography = ({
+  variant,
+  color,
+  children,
+}: Props): JSX.Element => {
+  const { t } = useTranslation();
+
   return (
     <StyledTypography variant={variant} color={color}>
-      {children}
+      {t(children as string)}
     </StyledTypography>
   );
 };
