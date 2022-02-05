@@ -10,8 +10,6 @@ export const showToast = (title: string, type?: ToastType) => {
     });
   }
 
-  console.log(type);
-
   if (type === 'error') {
     return toast.error(i18next.t(title, { ns: 'error' }), {
       style: { backgroundColor: `${theme.colors.error}` },

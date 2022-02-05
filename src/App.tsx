@@ -36,10 +36,10 @@ export const App = (): JSX.Element => {
             content={content}
             handleClose={onHandleClose}
           />
+
           <AppBar backgroundColor={theme.colors.primary} />
-          <Box mt={`${theme.baseline.b4}px`}>
-            <Toast />
-          </Box>
+          <Toast />
+
           <Wrapper>
             <Container />
           </Wrapper>

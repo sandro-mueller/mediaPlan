@@ -28,14 +28,14 @@
     }
   },
   "copyPlan": {
-    "id": "4c4a4df8-b229-40ff-861d-34e6b1b5dbc3",
-    "title": "Test",
+    "id": "5c878c0a-d9f9-4aa3-bb99-d851920c4cc8",
+    "title": "g",
     "startDate": "2022-01-01",
     "endDate": "2023-01-01",
     "channelItems": {
       "SEA": {
         "text": "",
-        "radio": "constant"
+        "radio": "exclude"
       },
       "Display": {
         "text": "",
