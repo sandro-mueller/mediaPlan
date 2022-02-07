@@ -6,6 +6,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `yarn run server`
+
+Runs the json-server
+
+Open [http://localhost:3001/mediaPlan](http://localhost:3001/mediaPlan) or [http://localhost:3001/copyPlan](http://localhost:3001/copyPlan) to view it in the browser
+
 ### `yarn start`
 
 Runs the app in the development mode.\
